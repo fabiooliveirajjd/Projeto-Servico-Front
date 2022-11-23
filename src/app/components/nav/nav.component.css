@@ -1,0 +1,26 @@
+.container{
+    height: 100%;
+}
+.sidenav{
+    width: 13rem;
+    color: white;
+    background: linear-gradient(90deg, rgba(59,125,215,1) 100%, rgba(172,182,167,1) 100%, rgba(68,160,179,1) 100%);
+    
+}
+img{
+    width: 100%;
+    margin: .8rem auto 1rem auto;
+}
+
+.sidenav a {
+    color: white;
+}
+.sidenav a {
+    margin-right: .6rem;
+}
+
+.menu{
+    margin: 1rem 0 0 1rem;
+    color: white;
+    background: linear-gradient(90deg, rgba(59,125,215,1) 100%, rgba(172,182,167,1) 100%, rgba(68,160,179,1) 100%);
+}
