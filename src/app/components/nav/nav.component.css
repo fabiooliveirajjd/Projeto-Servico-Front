@@ -4,7 +4,7 @@
 .sidenav{
     width: 13rem;
     color: white;
-    background-color: rgb(76, 76, 77);
+    background-color: rgb(203, 203, 204);
     
 }
 img{
@@ -13,7 +13,7 @@ img{
 }
 
 .sidenav a {
-    color: white;
+    color: rgb(37, 37, 37);
 }
 .sidenav a {
     margin-right: .6rem;
@@ -21,6 +21,6 @@ img{
 
 .menu{
     margin: 1rem 0 0 1rem;
-    color: white;
-    background-color: rgb(76, 76, 77);
+    color: rgb(37, 37, 37);
+    background-color: rgb(203, 203, 204);
 }
