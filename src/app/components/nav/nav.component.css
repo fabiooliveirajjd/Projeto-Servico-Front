@@ -4,7 +4,7 @@
 .sidenav{
     width: 13rem;
     color: white;
-    background: linear-gradient(90deg, rgba(59,125,215,1) 100%, rgba(172,182,167,1) 100%, rgba(68,160,179,1) 100%);
+    background: linear-gradient(90deg, rgb(138, 182, 243) 100%, rgba(172,182,167,1) 100%, rgba(68,160,179,1) 100%);
     
 }
 img{
