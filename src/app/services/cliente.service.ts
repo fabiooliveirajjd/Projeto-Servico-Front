@@ -2,32 +2,32 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { API_CONFIG } from '../config/api.config';
-import { Tecnico } from '../models/tecnico';
+import { Cliente } from '../models/cliente';
 
 @Injectable({
   providedIn: 'root'
 }) 
-export class TecnicoService {
+export class ClienteService {
 
   constructor(private http: HttpClient) { }
 
 
-  findById(idTecnico: any):Observable<Tecnico> {
-    return this.http.get<Tecnico>(`${API_CONFIG.baseUrl}/tecnicos/${idTecnico}`);
+  findById(idCliente: any):Observable<Cliente> {
+    return this.http.get<Cliente>(`${API_CONFIG.baseUrl}/clientes/${idCliente}`);
   }
 
-  findAll(): Observable<Tecnico[]> {
-    return this.http.get<Tecnico[]>(`${API_CONFIG.baseUrl}/tecnicos`);
+  findAll(): Observable<Cliente[]> {
+    return this.http.get<Cliente[]>(`${API_CONFIG.baseUrl}/clientes`);
   }
 
-   create(tecnico: Tecnico): Observable<Tecnico> {
-    return this.http.post<Tecnico>(`${API_CONFIG.baseUrl}/tecnicos`,tecnico);
+   create(cliente: Cliente): Observable<Cliente> {
+    return this.http.post<Cliente>(`${API_CONFIG.baseUrl}/clientes`,cliente);
    }
-   update(tecnico: Tecnico): Observable<Tecnico> {
-    return this.http.put<Tecnico>(`${API_CONFIG.baseUrl}/tecnicos/${tecnico.idTecnico}`,tecnico);
+   update(cliente: Cliente): Observable<Cliente> {
+    return this.http.put<Cliente>(`${API_CONFIG.baseUrl}/clientes/${cliente.idCliente}`,cliente);
    }
 
-   delete(idTecnico: any):Observable<Tecnico> {
-    return this.http.delete<Tecnico>(`${API_CONFIG.baseUrl}/tecnicos/${idTecnico}`);
+   delete(idCliente: any):Observable<Cliente> {
+    return this.http.delete<Cliente>(`${API_CONFIG.baseUrl}/clientes/${idCliente}`);
 }
 }
