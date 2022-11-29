@@ -1,3 +1,4 @@
+import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
 import { ClienteListComponent } from './components/cliente/cliente-list/cliente-list.component';
 import { TecnicoDeleteComponent } from './components/tecnico/tecnico-delete/tecnico-delete.component';
 import { NgModule } from '@angular/core';
@@ -17,8 +18,9 @@ const routes: Routes = [
   { path: 'tecnicos/update/:idTecnico', component: TecnicoUpdateComponent },
   { path: 'tecnicos/delete/:idTecnico', component: TecnicoDeleteComponent },
 
-  { path: 'clientes', component: ClienteListComponent }
-
+  { path: 'clientes', component: ClienteListComponent },
+  { path: 'clientes/create', component: ClienteCreateComponent }
+  
   ] }
 ];
 
