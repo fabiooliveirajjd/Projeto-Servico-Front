@@ -1,3 +1,5 @@
+import { TecnicoListComponent } from './../../tecnico/tecnico-list/tecnico-list.component';
+import { Tecnico } from 'src/app/models/tecnico';
 import { ChamadoService } from 'src/app/services/chamado.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
@@ -14,8 +16,8 @@ export class ChamadoListComponent implements OnInit {
   
   ELEMENT_DATA: Chamado[] = []
   
-  displayedColumns: string[] = ['idChamado', 'nomeTecnico', 
-  'nomeCliente', 'prioridade', 'status',  'dataAbertura',
+  displayedColumns: string[] = ['idChamado', 'tecnico', 
+  'cliente', 'prioridade', 'status',  'dataAbertura',
   'dataFechamento', 'titulo', 'valor','acoes'];
   dataSource = new MatTableDataSource<Chamado>(this.ELEMENT_DATA);
   
@@ -42,4 +44,7 @@ export class ChamadoListComponent implements OnInit {
     this.dataSource.filter = filterValue.trim().toLowerCase();
     this.dataSource.paginator = this.paginator;
   }
-}
+
+  }
+
+
