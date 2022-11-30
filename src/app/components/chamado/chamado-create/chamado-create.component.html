@@ -1,1 +1,67 @@
-<p>chamado-create works!</p>
+<div class="container mat-elevation-z8">
+  <form class="form">
+
+  <h1  class="fullWildth">Criando chamado</h1>
+  <img class="fullWildth1" mat-card-image src="assets/imagem/im1.svg" alt="Cadastrar cliente">
+
+  <div class="tecnico">
+    <mat-form-field class="full-width" appearance="outline">
+       <mat-label>Selecione um técnico</mat-label>
+       <mat-select >
+       </mat-select>
+     </mat-form-field>
+  </div>
+
+  <div class="cliente">
+    <mat-form-field class="full-width" appearance="outline">
+       <mat-label>Selecione um cliente</mat-label>
+       <mat-select>
+       </mat-select>
+     </mat-form-field>
+  </div>
+
+   <div class="status-prioridade">
+     <mat-form-field appearance="outline">
+        <mat-label>Selecione um status</mat-label>
+        <mat-select>
+          <mat-option value="1">ABERTO</mat-option>
+          <mat-option value="2">EM ANDAMENTO</mat-option>
+          <mat-option value="3">ENCERRADO</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label>Selecione uma prioridade</mat-label>
+        <mat-select >
+          <mat-option value="1">BAIXA</mat-option>
+          <mat-option value="2">MÉDIA</mat-option>
+          <mat-option value="3">ALTA</mat-option>
+        </mat-select>
+      </mat-form-field>
+   </div>
+
+   <mat-form-field class="full-width" appearance="outline">
+    <mat-label>Título do chamado</mat-label>
+    <input 
+    matInput 
+    placeholder="Ex. Trocar bateria de notebook">
+  </mat-form-field>
+</form>
+
+   <form class="form">  
+     <mat-form-field class="full-width" appearance="outline">
+       <mat-label>Deixe uma observação</mat-label>
+       <textarea 
+       class="observacoes" 
+       matInput 
+       placeholder="Ex. trocar bateria de notebook queimada..."></textarea>
+     </mat-form-field>
+   </form>
+    
+          <button  class="full-width  mat-elevation-z8" mat-stroked-button color="warn">Cadastrar</button>
+    
+          <button  routerLink="../" class="full-width  mat-elevation-z8" mat-stroked-button >Voltar</button>
+        </div>
+          
+       
+    
