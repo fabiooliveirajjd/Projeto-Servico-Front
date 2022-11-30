@@ -7,7 +7,9 @@
   <div class="tecnico">
     <mat-form-field class="full-width" appearance="outline">
        <mat-label>Selecione um técnico</mat-label>
-       <mat-select >
+       <mat-select 
+       [formControl]="tecnico" 
+       required>
        </mat-select>
      </mat-form-field>
   </div>
@@ -15,7 +17,9 @@
   <div class="cliente">
     <mat-form-field class="full-width" appearance="outline">
        <mat-label>Selecione um cliente</mat-label>
-       <mat-select>
+       <mat-select 
+       [formControl]="cliente" 
+       required>
        </mat-select>
      </mat-form-field>
   </div>
@@ -23,7 +27,7 @@
    <div class="status-prioridade">
      <mat-form-field appearance="outline">
         <mat-label>Selecione um status</mat-label>
-        <mat-select>
+        <mat-select  [formControl]="status" required >
           <mat-option value="1">ABERTO</mat-option>
           <mat-option value="2">EM ANDAMENTO</mat-option>
           <mat-option value="3">ENCERRADO</mat-option>
@@ -32,7 +36,7 @@
 
       <mat-form-field appearance="outline">
         <mat-label>Selecione uma prioridade</mat-label>
-        <mat-select >
+        <mat-select [formControl]="prioridade" required>
           <mat-option value="1">BAIXA</mat-option>
           <mat-option value="2">MÉDIA</mat-option>
           <mat-option value="3">ALTA</mat-option>
@@ -42,7 +46,7 @@
 
    <mat-form-field class="full-width" appearance="outline">
     <mat-label>Título do chamado</mat-label>
-    <input 
+    <input [formControl]="titulo" required
     matInput 
     placeholder="Ex. Trocar bateria de notebook">
   </mat-form-field>
@@ -51,14 +55,14 @@
    <form class="form">  
      <mat-form-field class="full-width" appearance="outline">
        <mat-label>Deixe uma observação</mat-label>
-       <textarea 
+       <textarea  
        class="observacoes" 
        matInput 
        placeholder="Ex. trocar bateria de notebook queimada..."></textarea>
      </mat-form-field>
    </form>
     
-          <button  class="full-width  mat-elevation-z8" mat-stroked-button color="warn">Cadastrar</button>
+          <button [disabled]="!validaCampos()" class="full-width  mat-elevation-z8" mat-stroked-button color="warn">Cadastrar</button>
     
           <button  routerLink="../" class="full-width  mat-elevation-z8" mat-stroked-button >Voltar</button>
         </div>
