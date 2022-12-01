@@ -54,7 +54,7 @@ export class ChamadoCreateComponent implements OnInit {
 
   create(): void{
     this.chamadoService.create(this.chamado).subscribe(resposta => {
-      this.router.navigate(['chamados']);
+      this.router.navigate(['/chamados']);
       console.log(); 
     })
   }
