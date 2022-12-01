@@ -1,14 +1,14 @@
 export interface Chamado{
     idChamado?: any;
-    prioridade: string;
-    status: string;
+    prioridade?: any;
+    status?: any;
     observacoes: string;
     titulo: string;
-    tecnico?: any;
-    cliente?: any;
-    nomeCliente: string;
-    nomeTecnico: string;
+    idTecnico?: any;
+    idCliente?: any;
     valor?: any;
+    nomeTecnico: string;
+    nomeCliente: string
     dataAbertura?: string;
     dataFechamento?: string;
 }

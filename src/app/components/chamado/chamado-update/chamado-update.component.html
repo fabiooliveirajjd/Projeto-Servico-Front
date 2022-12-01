@@ -1,15 +1,15 @@
 <div class="container mat-elevation-z8">
     <form class="form">
   
-    <h1  class="fullWildth">Criando chamado</h1>
+    <h1  class="fullWildth">Atualizar chamado</h1>
     <img class="fullWildth1" mat-card-image src="assets/imagem/im1.svg" alt="Cadastrar cliente">
   
     <div class="tecnico">
       <mat-form-field class="full-width" appearance="outline">
-         <mat-label>Selecione um técnico</mat-label>
+         <mat-label> {{ chamado.idTecnico }} </mat-label>
          <mat-select 
-         [(ngModel)]="chamado.tecnico"
-         name="tecnico"
+         [(ngModel)]="chamado.idTecnico"
+         name="idTecnico"
          [formControl]="tecnico" 
          required>
          <mat-option *ngFor="let tec of tecnicos" value="{{ tec.idTecnico}}">{{ tec.nome }}</mat-option>
@@ -19,10 +19,10 @@
   
     <div class="cliente">
       <mat-form-field class="full-width" appearance="outline">
-         <mat-label>Selecione um cliente</mat-label>
+         <mat-label>{{ chamado.idCliente }}</mat-label>
          <mat-select 
-         [(ngModel)]="chamado.cliente"
-         name="cliente"
+         [(ngModel)]="chamado.idCliente"
+         name="idCliente"
          [formControl]="cliente" 
          required>
          <mat-option *ngFor="let cli of clientes" value="{{ cli.idCliente }}">{{ cli.nome }}</mat-option>
@@ -91,7 +91,7 @@
        </mat-form-field>
      </form>
       
-            <button (click)="create()" [disabled]="!validaCampos()" class="full-width  mat-elevation-z8" mat-stroked-button color="warn">Cadastrar</button>
+            <button (click)="update()" [disabled]="!validaCampos()" class="full-width  mat-elevation-z8" mat-stroked-button color="warn">Atualizar</button>
             <button  routerLink="../" class="full-width  mat-elevation-z8" mat-stroked-button >Voltar</button>
     </div>
             

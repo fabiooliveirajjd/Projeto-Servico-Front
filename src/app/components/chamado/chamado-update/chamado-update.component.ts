@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { ChamadoService } from 'src/app/services/chamado.service';
 
 import { Chamado } from './../../../models/chamado';
@@ -21,11 +21,11 @@ export class ChamadoUpdateComponent implements OnInit {
     status: '',
     observacoes: '',
     titulo: '',
-    tecnico: '',
-    cliente: '',
+    idTecnico: '',
+    idCliente: '',
     valor: '',
-    nomeCliente: '',
     nomeTecnico: '',
+    nomeCliente: ''
   }
 
   clientes: Cliente[] = []
@@ -44,14 +44,24 @@ export class ChamadoUpdateComponent implements OnInit {
     private clienteService: ClienteService,
     private tecnicoService: TecnicoService,
     private router: Router,
+    private route: ActivatedRoute
   ) { }
 
   ngOnInit(): void {
+    this.chamado.idChamado = this.route.snapshot.paramMap.get('idChamado');
+    this.findById();
     this.findAllClientes();
     this.findAllTecnicos();
   }
+   
+  findById(): void {
+    this.chamadoService.findById(this.chamado.idChamado).subscribe(resposta => {
+      this.chamado = resposta;
+      console.log(); 
+    })
+  }
 
-  create(): void{
+  update(): void{
     this.chamadoService.create(this.chamado).subscribe(resposta => {
       this.router.navigate(['/chamados']);
       console.log(); 
@@ -77,6 +87,7 @@ export class ChamadoUpdateComponent implements OnInit {
      && this.valor.valid && this.titulo.valid
      && this.observacoes.valid
     }
-
+  
+ 
 }
 
