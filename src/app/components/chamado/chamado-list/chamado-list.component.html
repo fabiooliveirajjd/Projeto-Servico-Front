@@ -82,12 +82,12 @@
         <ng-container matColumnDef="acoes">
           <th mat-header-cell *matHeaderCellDef> AÇÔES </th>
           <td mat-cell *matCellDef="let element"> 
-            <a routerLink="update/{{ element.idCliente }}">
+            <a routerLink="update/{{ element.idChamado }}">
             <i class="material-icons edit">edit</i>
          </a>
 
          
-         <a routerLink="delete/{{ element.idCliente }}">
+         <a routerLink="delete/{{ element.idChamado }}">
             <i class="material-icons delete">delete</i>
          </a>
       </td>

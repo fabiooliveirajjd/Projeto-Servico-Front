@@ -1,1 +1,99 @@
-<p>chamado-update works!</p>
+<div class="container mat-elevation-z8">
+    <form class="form">
+  
+    <h1  class="fullWildth">Criando chamado</h1>
+    <img class="fullWildth1" mat-card-image src="assets/imagem/im1.svg" alt="Cadastrar cliente">
+  
+    <div class="tecnico">
+      <mat-form-field class="full-width" appearance="outline">
+         <mat-label>Selecione um técnico</mat-label>
+         <mat-select 
+         [(ngModel)]="chamado.tecnico"
+         name="tecnico"
+         [formControl]="tecnico" 
+         required>
+         <mat-option *ngFor="let tec of tecnicos" value="{{ tec.idTecnico}}">{{ tec.nome }}</mat-option>
+         </mat-select>
+       </mat-form-field>
+    </div>
+  
+    <div class="cliente">
+      <mat-form-field class="full-width" appearance="outline">
+         <mat-label>Selecione um cliente</mat-label>
+         <mat-select 
+         [(ngModel)]="chamado.cliente"
+         name="cliente"
+         [formControl]="cliente" 
+         required>
+         <mat-option *ngFor="let cli of clientes" value="{{ cli.idCliente }}">{{ cli.nome }}</mat-option>
+         </mat-select>
+       </mat-form-field>
+    </div>
+  
+     <div class="status-prioridade">
+       <mat-form-field appearance="outline">
+          <mat-label>Selecione um status</mat-label>
+          <mat-select  
+          [(ngModel)]="chamado.status"
+          name="status"
+          [formControl]="status" required >
+            <mat-option value="0">ABERTO</mat-option>
+            <mat-option value="1">ANDAMENTO</mat-option>
+            <mat-option value="2">ENCERRADO</mat-option>
+          </mat-select>
+        </mat-form-field>
+  
+        <mat-form-field appearance="outline">
+          <mat-label>Selecione uma prioridade</mat-label>
+          <mat-select
+          [(ngModel)]="chamado.prioridade"
+          name="prioridade"
+          [formControl]="prioridade" required>
+            <mat-option value="0">BAIXA</mat-option>
+            <mat-option value="1">MEDIA</mat-option>
+            <mat-option value="2">ALTA</mat-option>
+          </mat-select>
+        </mat-form-field>
+     </div>
+  
+     <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Valor</mat-label>
+      <input 
+      [(ngModel)]="chamado.valor"
+      name="valor"
+      [formControl]="valor" required
+      matInput 
+      placeholder="200">
+    </mat-form-field>
+  
+     <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Título do chamado</mat-label>
+      <input 
+      [(ngModel)]="chamado.titulo"
+      name="titulo"
+      [formControl]="titulo" required
+      matInput 
+      placeholder="Ex. Trocar bateria de notebook">
+    </mat-form-field>
+  </form>
+  
+     <form class="form">  
+       <mat-form-field class="full-width" appearance="outline">
+         <mat-label>Deixe uma observação</mat-label>
+         <textarea  
+         [(ngModel)]="chamado.observacoes"
+         name="observacoes"
+         [formControl]="observacoes"
+          required
+         class="observacoes" 
+         matInput 
+         placeholder="Ex. trocar bateria de notebook queimada..."></textarea>
+       </mat-form-field>
+     </form>
+      
+            <button (click)="create()" [disabled]="!validaCampos()" class="full-width  mat-elevation-z8" mat-stroked-button color="warn">Cadastrar</button>
+            <button  routerLink="../" class="full-width  mat-elevation-z8" mat-stroked-button >Voltar</button>
+    </div>
+            
+         
+      
