@@ -1,3 +1,4 @@
+import { ClienteDeleteComponent } from './components/cliente/cliente-delete/cliente-delete.component';
 import { ChamadoCreateComponent } from './components/chamado/chamado-create/chamado-create.component';
 import { ChamadoListComponent } from './components/chamado/chamado-list/chamado-list.component';
 import { ClienteUpdateComponent } from './components/cliente/cliente-update/cliente-update.component';
@@ -24,7 +25,7 @@ const routes: Routes = [
   { path: 'clientes', component: ClienteListComponent },
   { path: 'clientes/create', component: ClienteCreateComponent },
   { path: 'clientes/update/:idCliente', component: ClienteUpdateComponent },
-  { path: 'tecnicos/delete/:idCliente', component: ClienteUpdateComponent },
+  { path: 'clientes/delete/:idCliente', component: ClienteDeleteComponent },
 
   { path: 'chamados', component: ChamadoListComponent },
   { path: 'chamados/create', component: ChamadoCreateComponent }

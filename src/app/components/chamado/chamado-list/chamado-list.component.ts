@@ -1,10 +1,8 @@
-import { TecnicoListComponent } from './../../tecnico/tecnico-list/tecnico-list.component';
-import { Tecnico } from 'src/app/models/tecnico';
-import { ChamadoService } from 'src/app/services/chamado.service';
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
-import { Chamado } from  'src/app/models/chamado';
+import { Chamado } from 'src/app/models/chamado';
+import { ChamadoService } from 'src/app/services/chamado.service';
 
 @Component({
   selector: 'app-chamado-list',

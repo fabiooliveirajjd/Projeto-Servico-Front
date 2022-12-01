@@ -36,7 +36,6 @@ export class TecnicoDeleteComponent implements OnInit {
   
     })
   }
-
   delete(): void {
     this.service.delete(this.tecnico.idTecnico).subscribe(() =>{
     this.router.navigate(['/tecnicos'])  

@@ -47,8 +47,6 @@ export class TecnicoUpdateComponent implements OnInit {
   
     })
   }
-
-
   update(): void {
     this.service.update(this.tecnico).subscribe(() =>{
     this.router.navigate(['/tecnicos'])  

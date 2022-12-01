@@ -4,11 +4,11 @@ export interface Chamado{
     status: string;
     observacoes: string;
     titulo: string;
-    tecnico: any;
-    cliente: any;
+    tecnico?: any;
+    cliente?: any;
     nomeCliente: string;
     nomeTecnico: string;
-    valor: any;
+    valor?: any;
     dataAbertura?: string;
     dataFechamento?: string;
 }
