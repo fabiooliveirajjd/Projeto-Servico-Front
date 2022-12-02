@@ -38,7 +38,7 @@ export class ChamadoUpdateComponent implements OnInit {
   tecnico: FormControl = new FormControl(null, Validators.required);
   cliente: FormControl = new FormControl(null, Validators.required);
   valor: FormControl = new FormControl(null, Validators.required);
-
+ss
   constructor(
     private chamadoService: ChamadoService,
     private clienteService: ClienteService,
