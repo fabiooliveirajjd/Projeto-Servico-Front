@@ -8,6 +8,7 @@
       <mat-form-field class="full-width" appearance="outline">
          <mat-label> {{ chamado.nomeTecnico }} </mat-label>
          <mat-select 
+         [disabled]="true"
          [(ngModel)]="chamado.nomeTecnico"
          name="nomeTecnico"
          [formControl]="tecnico" 
@@ -21,6 +22,7 @@
       <mat-form-field class="full-width" appearance="outline">
          <mat-label>{{ chamado.nomeCliente }}</mat-label>
          <mat-select 
+         [disabled]="true"
          [(ngModel)]="chamado.nomeCliente"
          name="nomeCliente"
          [formControl]="cliente" 
