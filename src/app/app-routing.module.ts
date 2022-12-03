@@ -1,3 +1,4 @@
+import { ChamadoDeleteComponent } from './components/chamado/chamado-delete/chamado-delete.component';
 import { ChamadoUpdateComponent } from './components/chamado/chamado-update/chamado-update.component';
 import { ClienteDeleteComponent } from './components/cliente/cliente-delete/cliente-delete.component';
 import { ChamadoCreateComponent } from './components/chamado/chamado-create/chamado-create.component';
@@ -30,7 +31,8 @@ const routes: Routes = [
 
   { path: 'chamados', component: ChamadoListComponent },
   { path: 'chamados/create', component: ChamadoCreateComponent },
-  { path: 'chamados/update/:idChamado', component: ChamadoUpdateComponent }
+  { path: 'chamados/update/:idChamado', component: ChamadoUpdateComponent },
+  { path: 'chamados/delete/:idChamado', component: ChamadoDeleteComponent }
   ] }
 ];
 

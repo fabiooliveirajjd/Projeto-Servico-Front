@@ -30,5 +30,9 @@ export class ChamadoService {
     return this.http.put<Chamado>(`${API_CONFIG.baseUrl}/chamados/${chamado.idChamado}`, chamado);
    }
 
+   delete(idChamado: any):Observable<Chamado> {
+    return this.http.delete<Chamado>(`${API_CONFIG.baseUrl}/chamados/${idChamado}`);
+}
+
 }
      

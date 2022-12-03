@@ -1,0 +1,48 @@
+.container {
+    inline-size: 45rem;
+    width: 45%;
+    margin: auto;
+    background-color: rgb(203, 203, 204);
+    padding: 1rem;
+   border-radius: .6rem;
+ }
+ 
+ .full-width {
+    inline-size: 100%;
+ }
+ 
+ .fullWildth1{
+    inline-size: 100%;
+ }
+ 
+ h1, img, p{
+    text-align: center;
+ }
+ 
+ img{
+    block-size: 11rem;
+    margin: auto;
+ }
+ 
+ .status-prioridade {
+    display: flex;
+    justify-content: space-between;
+ }
+ 
+ .status-prioridade mat-form-field {
+    width: 49%;
+ }
+ 
+ .observacoes {
+    min-height: 2rem;
+    max-height: 10rem;
+ }
+ 
+ button {
+    margin-top: .5rem;
+ }
+ 
+ p {
+    margin-top: 3rem;
+    opacity: .5;
+ }

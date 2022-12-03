@@ -32,7 +32,7 @@
   
      <div class="status-prioridade">
        <mat-form-field appearance="outline">
-          <mat-label>Selecione um status</mat-label>
+          <mat-label>STATUS: {{ retornaStatus(chamado.status)  }}</mat-label>
           <mat-select  
           [(ngModel)]="chamado.status"
           name="status"
@@ -44,7 +44,7 @@
         </mat-form-field>
   
         <mat-form-field appearance="outline">
-          <mat-label>Selecione uma prioridade</mat-label>
+          <mat-label>PRIORIDADE: {{ retornaPrioridade(chamado.prioridade)  }}</mat-label>
           <mat-select
           [(ngModel)]="chamado.prioridade"
           name="prioridade"

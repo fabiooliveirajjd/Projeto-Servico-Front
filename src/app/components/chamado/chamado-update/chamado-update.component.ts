@@ -38,7 +38,7 @@ export class ChamadoUpdateComponent implements OnInit {
   tecnico: FormControl = new FormControl(null, Validators.required);
   cliente: FormControl = new FormControl(null, Validators.required);
   valor: FormControl = new FormControl(null, Validators.required);
-ss
+
   constructor(
     private chamadoService: ChamadoService,
     private clienteService: ClienteService,
@@ -62,12 +62,12 @@ ss
   }
 
   update(): void{
-    this.chamadoService.create(this.chamado).subscribe(resposta => {
+    this.chamadoService.update(this.chamado).subscribe(resposta => {
       this.router.navigate(['/chamados']);
       console.log(); 
     })
   }
-
+  
   findAllClientes(): void {
     this.clienteService.findAll().subscribe(resposta => {
       this.clientes = resposta;
@@ -88,6 +88,30 @@ ss
      && this.observacoes.valid
     }
   
- 
+    retornaStatus(status: any): string {
+      if(status == 'ABERTO') {
+        return 'ABERTO'
+      } else if(status == 'ANDAMENTO') {
+        return 'ANDAMENTO'
+      } else {
+        return 'ENCERRADO'
+      }
+    }
+  
+    retornaPrioridade(prioridade: any): string {
+      if(prioridade == 'BAIXA') {
+        return 'BAIXA'
+      } else if(prioridade == 'MEDIA') {
+        return 'MEDIA'
+      } else {
+        return 'ALTA'
+      }
+    }
+
+    retornaNomeTecnico(idTecnico: any): any {
+      if(idTecnico == idTecnico ) {
+        return this.chamado.nomeTecnico;
+      }
+    }
 }
 

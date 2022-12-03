@@ -19,7 +19,7 @@ h1, img, p{
 }
 
 img{
-   block-size: 15rem;
+   block-size: 11rem;
    margin: auto;
 }
 
@@ -33,7 +33,7 @@ img{
 }
 
 .observacoes {
-   min-height: 4rem;
+   min-height: 3rem;
    max-height: 10rem;
 }
 

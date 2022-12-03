@@ -1,5 +1,6 @@
 .container {
     inline-size: 45rem;
+    width: 45%;
     margin: auto;
     background-color: rgb(203, 203, 204);
     padding: 1rem;
@@ -19,7 +20,7 @@
  }
  
  img{
-    block-size: 15rem;
+    block-size: 11rem;
     margin: auto;
  }
  
