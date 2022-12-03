@@ -1,3 +1,5 @@
+import { Tecnico } from './tecnico';
+import { Cliente } from './cliente';
 export interface Chamado{
     idChamado?: any;
     prioridade?: any;

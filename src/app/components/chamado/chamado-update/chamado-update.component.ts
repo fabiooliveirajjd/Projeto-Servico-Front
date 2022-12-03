@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ChamadoService } from 'src/app/services/chamado.service';
 
 import { Chamado } from './../../../models/chamado';
@@ -25,7 +25,7 @@ export class ChamadoUpdateComponent implements OnInit {
     idCliente: '',
     valor: '',
     nomeTecnico: '',
-    nomeCliente: ''
+    nomeCliente: '',
   }
 
   clientes: Cliente[] = []
@@ -60,7 +60,7 @@ export class ChamadoUpdateComponent implements OnInit {
       console.log(); 
     })
   }
-
+  
   update(): void{
     this.chamadoService.update(this.chamado).subscribe(resposta => {
       this.router.navigate(['/chamados']);
@@ -108,10 +108,5 @@ export class ChamadoUpdateComponent implements OnInit {
       }
     }
 
-    retornaNomeTecnico(idTecnico: any): any {
-      if(idTecnico == idTecnico ) {
-        return this.chamado.nomeTecnico;
-      }
-    }
 }
-
+   

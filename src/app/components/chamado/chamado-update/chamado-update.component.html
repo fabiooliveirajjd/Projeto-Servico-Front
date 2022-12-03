@@ -6,10 +6,10 @@
   
     <div class="tecnico">
       <mat-form-field class="full-width" appearance="outline">
-         <mat-label> {{ chamado.idTecnico }} </mat-label>
+         <mat-label> {{ chamado.nomeTecnico }} </mat-label>
          <mat-select 
-         [(ngModel)]="chamado.idTecnico"
-         name="idTecnico"
+         [(ngModel)]="chamado.nomeTecnico"
+         name="nomeTecnico"
          [formControl]="tecnico" 
          required>
          <mat-option *ngFor="let tec of tecnicos" value="{{ tec.idTecnico}}">{{ tec.nome }}</mat-option>
@@ -19,10 +19,10 @@
   
     <div class="cliente">
       <mat-form-field class="full-width" appearance="outline">
-         <mat-label>{{ chamado.idCliente }}</mat-label>
+         <mat-label>{{ chamado.nomeCliente }}</mat-label>
          <mat-select 
-         [(ngModel)]="chamado.idCliente"
-         name="idCliente"
+         [(ngModel)]="chamado.nomeCliente"
+         name="nomeCliente"
          [formControl]="cliente" 
          required>
          <mat-option *ngFor="let cli of clientes" value="{{ cli.idCliente }}">{{ cli.nome }}</mat-option>
@@ -32,7 +32,7 @@
   
      <div class="status-prioridade">
        <mat-form-field appearance="outline">
-          <mat-label>STATUS: {{ retornaStatus(chamado.status)  }}</mat-label>
+          <mat-label>{{ chamado.status }}</mat-label>
           <mat-select  
           [(ngModel)]="chamado.status"
           name="status"
@@ -42,9 +42,9 @@
             <mat-option value="2">ENCERRADO</mat-option>
           </mat-select>
         </mat-form-field>
-  
+     
         <mat-form-field appearance="outline">
-          <mat-label>PRIORIDADE: {{ retornaPrioridade(chamado.prioridade)  }}</mat-label>
+          <mat-label>  {{ chamado.prioridade }}</mat-label>
           <mat-select
           [(ngModel)]="chamado.prioridade"
           name="prioridade"
