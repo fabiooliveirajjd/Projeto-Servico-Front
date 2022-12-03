@@ -15,6 +15,7 @@ import { NavComponent } from './components/nav/nav.component';
 import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecnico-create.component';
 import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
 import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
+import { EstoqueListComponent } from './components/estoque/estoque-list/estoque-list.component';
 
 const routes: Routes = [
   { path: '', component: NavComponent, children: [
@@ -32,7 +33,11 @@ const routes: Routes = [
   { path: 'chamados', component: ChamadoListComponent },
   { path: 'chamados/create', component: ChamadoCreateComponent },
   { path: 'chamados/update/:idChamado', component: ChamadoUpdateComponent },
-  { path: 'chamados/delete/:idChamado', component: ChamadoDeleteComponent }
+  { path: 'chamados/delete/:idChamado', component: ChamadoDeleteComponent },
+
+  { path: 'estoques', component: EstoqueListComponent }
+
+
   ] }
 ];
 

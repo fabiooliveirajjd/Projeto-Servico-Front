@@ -34,6 +34,7 @@ import { ChamadoListComponent } from './components/chamado/chamado-list/chamado-
 import { ChamadoCreateComponent } from './components/chamado/chamado-create/chamado-create.component';
 import { ChamadoUpdateComponent } from './components/chamado/chamado-update/chamado-update.component';
 import { ChamadoDeleteComponent } from './components/chamado/chamado-delete/chamado-delete.component';
+import { EstoqueListComponent } from './components/estoque/estoque-list/estoque-list.component';
 
 
 @NgModule({
@@ -52,7 +53,8 @@ import { ChamadoDeleteComponent } from './components/chamado/chamado-delete/cham
     ChamadoListComponent,
     ChamadoCreateComponent,
     ChamadoUpdateComponent,
-    ChamadoDeleteComponent
+    ChamadoDeleteComponent,
+    EstoqueListComponent
   ],
   imports: [
     BrowserModule,
