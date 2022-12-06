@@ -1,3 +1,4 @@
+import { EstoqueDeleteComponent } from './components/estoque/estoque-delete/estoque-delete.component';
 import { EstoqueUpdateComponent } from './components/estoque/estoque-update/estoque-update.component';
 import { EstoqueCreateComponent } from './components/estoque/estoque-create/estoque-create.component';
 import { ChamadoDeleteComponent } from './components/chamado/chamado-delete/chamado-delete.component';
@@ -39,7 +40,8 @@ const routes: Routes = [
 
   { path: 'estoques', component: EstoqueListComponent },
   { path: 'estoques/create', component: EstoqueCreateComponent },
-  { path: 'estoques/update/:idEstoque', component: EstoqueUpdateComponent}
+  { path: 'estoques/update/:idEstoque', component: EstoqueUpdateComponent},
+  { path: 'estoques/delete/:idEstoque', component: EstoqueDeleteComponent}
 
 
   ] }
