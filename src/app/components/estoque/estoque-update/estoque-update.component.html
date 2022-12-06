@@ -1,1 +1,62 @@
-<p>estoque-update works!</p>
+<div class="container mat-elevation-z8">
+    <form class="form">
+  
+    <h1  class="fullWildth">Adicionando Produto no Estoque</h1>
+    <img class="fullWildth1" mat-card-image src="assets/imagem/im1.svg" alt="Cadastrar cliente">  
+
+        
+    <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Descrição</mat-label>
+        <input 
+        [(ngModel)]="estoque.descricao"
+        name="descricao"
+        [formControl]="descricao" required
+        matInput 
+        placeholder="Ex. Trocar bateria de notebook">
+      </mat-form-field>
+
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>Quantidade</mat-label>
+        <input 
+        [(ngModel)]="estoque.quantidade"
+        name="quantidade"
+        [formControl]="quantidade" required
+        matInput 
+        placeholder="200">
+      </mat-form-field>
+
+     <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Valor da Compra</mat-label>
+      <input 
+      [(ngModel)]="estoque.valorCompra"
+      name="valorCompra"
+      [formControl]="valorCompra" required
+      matInput 
+      placeholder="200">
+    </mat-form-field>
+  
+  </form>
+
+
+
+  
+  <div class="status-prioridade">
+    <mat-form-field appearance="outline">
+       <mat-label> {{ estoque.tipo }} </mat-label>
+       <mat-select  
+       [(ngModel)]="estoque.tipo"
+       name="tipo"
+       [formControl]="tipo" required >
+         <mat-option value="0">FERRAMENTA</mat-option>
+         <mat-option value="1">PECA</mat-option>
+         <mat-option value="2">OUTRO</mat-option>
+       </mat-select>
+     </mat-form-field>
+  </div>
+  
+            <button (click)="update()"  class="full-width  mat-elevation-z8" mat-stroked-button color="warn">Atualizar Estoque</button>
+            <button  routerLink="../../" class="full-width  mat-elevation-z8" mat-stroked-button >Voltar</button>
+    </div>
+            
+         
+      

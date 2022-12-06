@@ -39,7 +39,7 @@ const routes: Routes = [
 
   { path: 'estoques', component: EstoqueListComponent },
   { path: 'estoques/create', component: EstoqueCreateComponent },
-  { path: 'estoques/update/idEstoque', component: EstoqueUpdateComponent}
+  { path: 'estoques/update/:idEstoque', component: EstoqueUpdateComponent}
 
 
   ] }
