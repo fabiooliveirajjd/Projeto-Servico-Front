@@ -46,12 +46,12 @@
 
           <ng-container matColumnDef="tecnico">
             <th mat-header-cell *matHeaderCellDef> TÉCNICO </th>
-            <td mat-cell *matCellDef="let element"> {{ element.nomeTecnico }} </td>
+            <td mat-cell *matCellDef="let element"> {{ element.idTecnico }} </td>
           </ng-container>
-
+ 
           <ng-container matColumnDef="cliente">
             <th mat-header-cell *matHeaderCellDef> CLIENTE </th>
-            <td mat-cell *matCellDef="let element"> {{ element.nomeCliente }} </td>
+            <td mat-cell *matCellDef="let element"> {{ element.idCliente }} </td>
           </ng-container>
 
           <ng-container matColumnDef="valor">
@@ -63,7 +63,7 @@
             <th mat-header-cell *matHeaderCellDef> DATA DE ABERTURA </th>
             <td mat-cell *matCellDef="let element"> {{ element.dataAbertura }} </td>
           </ng-container>
-
+  
           <ng-container matColumnDef="dataFechamento">
             <th mat-header-cell *matHeaderCellDef> DATA DE FECHAMENTO</th>
             <td mat-cell *matCellDef="let element"> {{ element.dataFechamento }} </td>
