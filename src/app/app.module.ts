@@ -39,6 +39,7 @@ import { EstoqueCreateComponent } from './components/estoque/estoque-create/esto
 import { EstoqueUpdateComponent } from './components/estoque/estoque-update/estoque-update.component';
 import { EstoqueDeleteComponent } from './components/estoque/estoque-delete/estoque-delete.component';
 import { FaturamentoListComponent } from './components/faturamento/faturamento-list/faturamento-list.component';
+import { FaturamentoCreateComponent } from './components/faturamento/faturamento-create/faturamento-create.component';
 
 
 @NgModule({
@@ -62,7 +63,8 @@ import { FaturamentoListComponent } from './components/faturamento/faturamento-l
     EstoqueCreateComponent,
     EstoqueUpdateComponent,
     EstoqueDeleteComponent,
-    FaturamentoListComponent
+    FaturamentoListComponent,
+    FaturamentoCreateComponent
   ],
   imports: [
     BrowserModule,

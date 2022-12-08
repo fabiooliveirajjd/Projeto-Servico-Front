@@ -20,6 +20,7 @@ import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecn
 import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
 import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
 import { EstoqueListComponent } from './components/estoque/estoque-list/estoque-list.component';
+import { FaturamentoCreateComponent } from './components/faturamento/faturamento-create/faturamento-create.component';
 
 const routes: Routes = [
   { path: '', component: NavComponent, children: [
@@ -44,7 +45,8 @@ const routes: Routes = [
   { path: 'estoques/update/:idEstoque', component: EstoqueUpdateComponent},
   { path: 'estoques/delete/:idEstoque', component: EstoqueDeleteComponent},
   
-  { path: 'faturamentos', component: FaturamentoListComponent}
+  { path: 'faturamentos', component: FaturamentoListComponent},
+  { path: 'faturamentos/create', component: FaturamentoCreateComponent}
 
 
   ] }
