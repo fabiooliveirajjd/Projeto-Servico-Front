@@ -1,1 +1,84 @@
-<p>faturamento-list works!</p>
+<div class="container">
+  <h1>LISTA DE FATURAMENTO</h1>
+
+  <button routerLink="create" class="mat-elevation-z8" mat-stroked-button>
+    Adicionar Faturamento
+  </button>
+
+  <mat-form-field appearance="standard">
+    <mat-label>Pesquisar Faturamento</mat-label>
+    <input
+      matInput
+      (keyup)="applyFilter($event)"
+      placeholder="Digite dados do Chamado"
+      #input
+    />
+  </mat-form-field>
+
+  <!-- <mat-radio-group color="primary">
+        <mat-radio-button  >ABERTO</mat-radio-button>
+        <mat-radio-button >ANDAMENTO</mat-radio-button>
+        <mat-radio-button >ENCERRADO</mat-radio-button>
+      </mat-radio-group>-->
+
+  <div class="mat-elevation-z8">
+    <table class="container1" mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="idFaturamento">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let element">{{ element.idFaturamento }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="idTecnico">
+        <th mat-header-cell *matHeaderCellDef>TÉCNICO</th>
+        <td mat-cell *matCellDef="let element">{{ element.idTecnico }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="idCliente">
+        <th mat-header-cell *matHeaderCellDef>CLIENTE</th>
+        <td mat-cell *matCellDef="let element">{{ element.idCliente }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="dataInicioFaturamento">
+        <th mat-header-cell *matHeaderCellDef>DATA INÍCIO FATURAMENTO</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.dataInicioFaturamento }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="dataFimFaturamento">
+        <th mat-header-cell *matHeaderCellDef>DATA FIM FATURAMENTO</th>
+        <td mat-cell *matCellDef="let element">
+          {{ element.dataFimFaturamento }}
+        </td>
+      </ng-container>
+
+      <ng-container matColumnDef="valorTotal">
+        <th mat-header-cell *matHeaderCellDef>VALOR</th>
+        <td mat-cell *matCellDef="let element">{{ element.valorTotal }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="acoes">
+        <th mat-header-cell *matHeaderCellDef>AÇÔES</th>
+        <td mat-cell *matCellDef="let element">
+          <a routerLink="update/{{ element.idChamado }}">
+            <i class="material-icons edit">edit</i>
+          </a>
+
+          <a routerLink="delete/{{ element.idChamado }}">
+            <i class="material-icons delete">delete</i>
+          </a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator
+      class="container"
+      [pageSizeOptions]="[10, 20]"
+      showFirstLastButtons
+    >
+    </mat-paginator>
+  </div>
+</div>
