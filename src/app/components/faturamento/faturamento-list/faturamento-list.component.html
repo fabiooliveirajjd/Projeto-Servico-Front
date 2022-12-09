@@ -30,25 +30,25 @@
 
       <ng-container matColumnDef="idTecnico">
         <th mat-header-cell *matHeaderCellDef>TÉCNICO</th>
-        <td mat-cell *matCellDef="let element">{{ element.idTecnico }}</td>
+        <td mat-cell *matCellDef="let element">{{ element.nomeTecnico }}</td>
       </ng-container>
 
       <ng-container matColumnDef="idCliente">
         <th mat-header-cell *matHeaderCellDef>CLIENTE</th>
-        <td mat-cell *matCellDef="let element">{{ element.idCliente }}</td>
+        <td mat-cell *matCellDef="let element">{{ element.nomeCliente }}</td>
       </ng-container>
 
       <ng-container matColumnDef="dataInicioFaturamento">
         <th mat-header-cell *matHeaderCellDef>DATA INÍCIO FATURAMENTO</th>
         <td mat-cell *matCellDef="let element">
-          {{ element.dataInicioFaturamento }}
+          {{ element.dataInicioFaturamento | date: 'dd/MM/yyyy' }}
         </td>
       </ng-container>
 
       <ng-container matColumnDef="dataFimFaturamento">
         <th mat-header-cell *matHeaderCellDef>DATA FIM FATURAMENTO</th>
         <td mat-cell *matCellDef="let element">
-          {{ element.dataFimFaturamento }}
+          {{ element.dataFimFaturamento | date: 'dd/MM/yyyy' }}
         </td>
       </ng-container>
 
