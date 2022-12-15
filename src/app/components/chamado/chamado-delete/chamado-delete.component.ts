@@ -14,6 +14,7 @@ import { TecnicoService } from './../../../services/tecnico.service';
   styleUrls: ['./chamado-delete.component.css']
 })
 export class ChamadoDeleteComponent implements OnInit {
+  
   chamado: Chamado = {
     prioridade: '',
     status: '',

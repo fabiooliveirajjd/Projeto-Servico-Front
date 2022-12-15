@@ -1,97 +1,116 @@
 <div class="container mat-elevation-z8">
-    <form class="form">
-  
-    <h1  class="fullWildth">Excluir  chamado</h1>
-    <img class="fullWildth1" mat-card-image src="assets/imagem/im1.svg" alt="Cadastrar cliente">
-  
+  <form class="form">
+    <h1 class="fullWildth">Visualização de Chamado</h1>
+    <img
+      class="fullWildth1"
+      mat-card-image
+      src="assets/imagem/im1.svg"
+      alt="Cadastrar cliente"
+    />
+
     <div class="tecnico">
       <mat-form-field class="full-width" appearance="outline">
-         <mat-label> {{ chamado.nomeTecnico }} </mat-label>
-         <mat-select 
-         [disabled]="true"
-         [(ngModel)]="chamado.idTecnico"
-         name="idTecnico">
-         <mat-option *ngFor="let tec of tecnicos" value="{{ tec.idTecnico}}">{{ tec.nome }}</mat-option>
-         </mat-select>
-       </mat-form-field>
+        <mat-label> {{ chamado.nomeTecnico }} </mat-label>
+        <mat-select
+          [disabled]="true"
+          [(ngModel)]="chamado.idTecnico"
+          name="idTecnico"
+        >
+          <mat-option
+            *ngFor="let tec of tecnicos"
+            value="{{ tec.idTecnico }}"
+            >{{ tec.nome }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
     </div>
-  
+
     <div class="cliente">
       <mat-form-field class="full-width" appearance="outline">
-         <mat-label>{{ chamado.nomeCliente }}</mat-label>
-         <mat-select 
-         [disabled]="true"
-         [(ngModel)]="chamado.idCliente"
-         name="idCliente">
-         <mat-option *ngFor="let cli of clientes" value="{{ cli.idCliente }}">{{ cli.nome }}</mat-option>
-         </mat-select>
-       </mat-form-field>
+        <mat-label>{{ chamado.nomeCliente }}</mat-label>
+        <mat-select
+          [disabled]="true"
+          [(ngModel)]="chamado.idCliente"
+          name="idCliente"
+        >
+          <mat-option
+            *ngFor="let cli of clientes"
+            value="{{ cli.idCliente }}"
+            >{{ cli.nome }}</mat-option
+          >
+        </mat-select>
+      </mat-form-field>
     </div>
-  
-     <div class="status-prioridade">
-       <mat-form-field appearance="outline">
-          <mat-label>{{ chamado.status }}</mat-label>
-          <mat-select  
+
+    <div class="status-prioridade">
+      <mat-form-field appearance="outline">
+        <mat-label>{{ chamado.status }}</mat-label>
+        <mat-select
           [disabled]="true"
           [(ngModel)]="chamado.status"
           name="status"
         >
-            <mat-option value="0">ABERTO</mat-option>
-            <mat-option value="1">ANDAMENTO</mat-option>
-            <mat-option value="2">ENCERRADO</mat-option>
-          </mat-select>
-        </mat-form-field>
-  
-        <mat-form-field appearance="outline">
-          <mat-label> {{ chamado.prioridade }} </mat-label>
-          <mat-select
+          <mat-option value="0">ABERTO</mat-option>
+          <mat-option value="1">ANDAMENTO</mat-option>
+          <mat-option value="2">ENCERRADO</mat-option>
+        </mat-select>
+      </mat-form-field>
+
+      <mat-form-field appearance="outline">
+        <mat-label> {{ chamado.prioridade }} </mat-label>
+        <mat-select
           [disabled]="true"
           [(ngModel)]="chamado.prioridade"
           name="prioridade"
-          s>
-            <mat-option value="0">BAIXA</mat-option>
-            <mat-option value="1">MEDIA</mat-option>
-            <mat-option value="2">ALTA</mat-option>
-          </mat-select>
-        </mat-form-field>
-     </div>
-  
-     <mat-form-field class="full-width" appearance="outline">
+          s
+        >
+          <mat-option value="0">BAIXA</mat-option>
+          <mat-option value="1">MEDIA</mat-option>
+          <mat-option value="2">ALTA</mat-option>
+        </mat-select>
+      </mat-form-field>
+    </div>
+
+    <mat-form-field class="full-width" appearance="outline">
       <mat-label>Valor</mat-label>
-      <input 
-      [(ngModel)]="chamado.valor"
-      name="valor"
-      [disabled]="true"
-      matInput 
-      placeholder="200">
+      <input
+        [(ngModel)]="chamado.valor"
+        name="valor"
+        [disabled]="true"
+        matInput
+        placeholder="200"
+      />
     </mat-form-field>
-  
-     <mat-form-field class="full-width" appearance="outline">
+
+    <mat-form-field class="full-width" appearance="outline">
       <mat-label>Título do chamado</mat-label>
-      <input 
-      [(ngModel)]="chamado.titulo"
-      name="titulo"
-      [disabled]="true"
-      matInput 
-      placeholder="Ex. Trocar bateria de notebook">
+      <input
+        [(ngModel)]="chamado.titulo"
+        name="titulo"
+        [disabled]="true"
+        matInput
+        placeholder="Ex. Trocar bateria de notebook"
+      />
     </mat-form-field>
   </form>
-  
-     <form class="form">  
-       <mat-form-field class="full-width" appearance="outline">
-         <mat-label>Deixe uma observação</mat-label>
-         <textarea  
-         [(ngModel)]="chamado.observacoes"
-         name="observacoes"
-         [disabled]="true"
-         matInput 
-         placeholder="Ex. trocar bateria de notebook queimada..."></textarea>
-       </mat-form-field>
-     </form>
-      
-            <button (click)="delete()"  class="full-width  mat-elevation-z8" mat-stroked-button color="warn">Deletar Chamado</button>
-            <button  routerLink="../../" class="full-width  mat-elevation-z8" mat-stroked-button >Voltar</button>
-    </div>
-            
-         
-      
+
+  <form class="form">
+    <mat-form-field class="full-width" appearance="outline">
+      <mat-label>Deixe uma observação</mat-label>
+      <textarea
+        [(ngModel)]="chamado.observacoes"
+        name="observacoes"
+        [disabled]="true"
+        matInput
+        placeholder="Ex. trocar bateria de notebook queimada..."
+      ></textarea>
+    </mat-form-field>
+  </form>
+  <button
+    routerLink="../../"
+    class="full-width mat-elevation-z8"
+    mat-stroked-button
+  >
+    Voltar
+  </button>
+</div>

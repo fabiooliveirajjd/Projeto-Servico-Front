@@ -1,0 +1,100 @@
+<div class="container mat-elevation-z8">
+    <form class="form">
+      <h1 class="fullWildth">Deletar Faturamento</h1>
+      <img
+        class="fullWildth1"
+        mat-card-image
+        src="assets/imagem/im1.svg"
+        alt="Cadastrar cliente"
+      />
+  
+      <div class="tecnico">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>{{ faturamento.nomeTecnico }}</mat-label>
+          <mat-select
+            [(ngModel)]="faturamento.idTecnico"
+            name="idTecnico"
+            [disabled]="true"
+          >
+            <mat-option
+              *ngFor="let tec of tecnicos"
+              value="{{ tec.idTecnico }}"
+              >{{ tec.nome }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+      </div>
+  
+      <div class="cliente">
+        <mat-form-field class="full-width" appearance="outline">
+          <mat-label>{{ faturamento.nomeCliente }}</mat-label>
+          <mat-select
+            [(ngModel)]="faturamento.idCliente"
+            name="idCliente"
+            [disabled]="true"
+          >
+            <mat-option
+              *ngFor="let cli of clientes"
+              value="{{ cli.idCliente }}"
+              >{{ cli.nome }}</mat-option
+            >
+          </mat-select>
+        </mat-form-field>
+      </div>
+  
+      
+      
+     <mat-form-field class="full-width" appearance="outline">
+        <mat-label>{{ faturamento.dataInicioFaturamento }}</mat-label>
+        <input [(ngModel)]="faturamento.dataInicioFaturamento"
+        name="dataInicioFaturamento" 
+        matInput [matDatepicker]="picker" 
+        [disabled]="true" />
+        <mat-datepicker-toggle
+          matIconSuffix
+          [for]="picker"
+        ></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+  
+      <mat-form-field appearance="outline" class="full-width">
+          <mat-label>{{ faturamento.dataFimFaturamento }}</mat-label>
+          <input 
+          [(ngModel)]="faturamento.dataFimFaturamento"
+          name="dataFimFaturamento"
+          matInput [matDatepicker]="datepicker"
+          [disabled]="true">
+          <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
+          <mat-datepicker #datepicker>
+          </mat-datepicker>
+        </mat-form-field>
+     
+      <mat-form-field class="full-width" appearance="outline">
+        <mat-label>{{ faturamento.valorTotal }}</mat-label>
+        <input
+          [(ngModel)]="faturamento.valorTotal"
+          name="valorTotal"
+          matInput
+          placeholder="200"
+          [disabled]="true"
+        />
+      </mat-form-field>
+  
+      <button
+        (click)="delete()"
+        class="full-width mat-elevation-z8"
+        mat-stroked-button
+        color="warn"
+      >
+        Deletar
+      </button>
+      <button
+        routerLink="../../"
+        class="full-width mat-elevation-z8"
+        mat-stroked-button
+      >
+        Voltar
+      </button>
+    </form>
+  </div>
+  

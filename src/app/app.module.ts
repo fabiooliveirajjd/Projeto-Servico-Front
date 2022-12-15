@@ -44,6 +44,7 @@ import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecn
 import { TecnicoDeleteComponent } from './components/tecnico/tecnico-delete/tecnico-delete.component';
 import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
 import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
+import { FaturamentoDeleteComponent } from './components/faturamento/faturamento-delete/faturamento-delete.component';
 
 registerLocaleData(ptBr)
 
@@ -70,7 +71,8 @@ registerLocaleData(ptBr)
     EstoqueUpdateComponent,
     EstoqueDeleteComponent,
     FaturamentoListComponent,
-    FaturamentoCreateComponent
+    FaturamentoCreateComponent,
+    FaturamentoDeleteComponent
   ],
   imports: [
     BrowserModule,

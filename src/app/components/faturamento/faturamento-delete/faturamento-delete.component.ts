@@ -1,45 +1,36 @@
-import { DatePipe } from '@angular/common';
-import { FaturamentoService } from './../../../services/faturamento.service';
 import { Component, OnInit } from '@angular/core';
-import { FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Chamado } from 'src/app/models/chamado';
 import { Faturamento } from 'src/app/models/faturamento';
 import { ChamadoService } from 'src/app/services/chamado.service';
 
 import { Cliente } from './../../../models/cliente';
 import { Tecnico } from './../../../models/tecnico';
 import { ClienteService } from './../../../services/cliente.service';
+import { FaturamentoService } from './../../../services/faturamento.service';
 import { TecnicoService } from './../../../services/tecnico.service';
-import { Chamado } from 'src/app/models/chamado';
 
 @Component({
-  selector: 'app-faturamento-create',
-  templateUrl: './faturamento-create.component.html',
-  styleUrls: ['./faturamento-create.component.css'],
-  providers:[DatePipe]
+  selector: 'app-faturamento-delete',
+  templateUrl: './faturamento-delete.component.html',
+  styleUrls: ['./faturamento-delete.component.css']
 })
-export class FaturamentoCreateComponent implements OnInit {
-
-
+export class FaturamentoDeleteComponent implements OnInit {
 
   faturamento: Faturamento = {
     valorTotal: '',
     idTecnico: '',
     idCliente: '',
-    dataInicioFaturamento: '',
-    dataFimFaturamento: '',
     nomeCliente: '',
-    nomeTecnico: ''
+    nomeTecnico: '',
+    dataInicioFaturamento: '',
+    dataFimFaturamento: ''
+    
   }
 
   clientes: Cliente[] = []
   tecnicos: Tecnico[] = []
   chamados: Chamado[] = []
-
-  valorTotal: FormControl = new FormControl(null, Validators.required);
-  idTecnico: FormControl = new FormControl(null, Validators.required);
-  idCliente: FormControl = new FormControl(null, Validators.required);
-
 
   constructor(
     private faturamentoService: FaturamentoService,
@@ -47,23 +38,21 @@ export class FaturamentoCreateComponent implements OnInit {
     private tecnicoService: TecnicoService,
     private chamadoService: ChamadoService,
     private router: Router,
+    private route: ActivatedRoute
   ) { }
   
   ngOnInit(): void {
+    this.faturamento.idFaturamento =  this.route.snapshot.paramMap.get('idFaturamento');
+    this.findById();
     this.findAllClientes();
     this.findAllTecnicos();
   }
 
-
-
-  create(): void{
-    this.faturamentoService.create(this.faturamento).subscribe(resposta => {
-      this.router.navigate(['/faturamentos']);
-      console.log(); 
+  findById(): void {
+    this.faturamentoService.findById(this.faturamento.idFaturamento).subscribe(resposta => {
+      this.faturamento = resposta;
     })
   }
-
-  
 
   findAllClientes(): void {
     this.clienteService.findAll().subscribe(resposta => {
@@ -77,11 +66,12 @@ export class FaturamentoCreateComponent implements OnInit {
       this.tecnicos = resposta;
     })
   }
- 
-  validaCampos(): boolean {
-    return this.valorTotal.valid
-     && this.idTecnico.valid 
-     && this.idCliente.valid 
-    }
+
+  delete(): void{
+    this.faturamentoService.delete(this.faturamento.idFaturamento).subscribe(resposta => {
+      this.router.navigate(['/faturamentos']);
+      console.log(); 
+    })
+  }
 }
 

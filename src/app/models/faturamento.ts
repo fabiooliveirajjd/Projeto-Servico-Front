@@ -4,6 +4,8 @@ export interface Faturamento{
     valorTotal: any;
     idTecnico: string;
     idCliente: string;
+    nomeCliente: string;
+    nomeTecnico: string;
     dataInicioFaturamento: any;
     dataFimFaturamento: any; 
 

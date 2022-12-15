@@ -4,8 +4,8 @@ export interface Chamado{
     status?: any;
     observacoes: string;
     titulo: string;
-    idTecnico?: any;
-    idCliente?: any;
+    idTecnico: any;
+    idCliente: any;
     valor?: any;
     nomeTecnico: string;
     nomeCliente: string

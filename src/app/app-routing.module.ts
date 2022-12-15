@@ -1,4 +1,6 @@
-import { NgModule } from '@angular/core';
+import { FaturamentoDeleteComponent } from './components/faturamento/faturamento-delete/faturamento-delete.component';
+import { Faturamento } from 'src/app/models/faturamento';
+import { NgModule, Component } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ChamadoCreateComponent } from './components/chamado/chamado-create/chamado-create.component';
@@ -46,12 +48,13 @@ const routes: Routes = [
   { path: 'estoques/delete/:idEstoque', component: EstoqueDeleteComponent},
   
   { path: 'faturamentos', component: FaturamentoListComponent},
-  { path: 'faturamentos/create', component: FaturamentoCreateComponent}
+  { path: 'faturamentos/create', component: FaturamentoCreateComponent},
+  { path: 'faturamentos/delete/:idFaturamento', component: FaturamentoDeleteComponent}
 
 
   ] }
 ];
-
+  
 @NgModule({
   imports: [RouterModule.forRoot(routes)],
   exports: [RouterModule]
