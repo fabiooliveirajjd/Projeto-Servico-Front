@@ -37,6 +37,7 @@ import { EstoqueDeleteComponent } from './components/estoque/estoque-delete/esto
 import { EstoqueListComponent } from './components/estoque/estoque-list/estoque-list.component';
 import { EstoqueUpdateComponent } from './components/estoque/estoque-update/estoque-update.component';
 import { FaturamentoCreateComponent } from './components/faturamento/faturamento-create/faturamento-create.component';
+import { FaturamentoDeleteComponent } from './components/faturamento/faturamento-delete/faturamento-delete.component';
 import { FaturamentoListComponent } from './components/faturamento/faturamento-list/faturamento-list.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavComponent } from './components/nav/nav.component';
@@ -44,7 +45,7 @@ import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecn
 import { TecnicoDeleteComponent } from './components/tecnico/tecnico-delete/tecnico-delete.component';
 import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
 import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
-import { FaturamentoDeleteComponent } from './components/faturamento/faturamento-delete/faturamento-delete.component';
+
 
 registerLocaleData(ptBr)
 
@@ -99,7 +100,8 @@ registerLocaleData(ptBr)
     MatNativeDateModule,
     ReactiveFormsModule,
     DatePipe
-     
+    
+      
   ],
   providers: [{ provide: LOCALE_ID, useValue: 'pt'}],
   bootstrap: [AppComponent]

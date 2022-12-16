@@ -1,6 +1,4 @@
-import { FaturamentoDeleteComponent } from './components/faturamento/faturamento-delete/faturamento-delete.component';
-import { Faturamento } from 'src/app/models/faturamento';
-import { NgModule, Component } from '@angular/core';
+import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ChamadoCreateComponent } from './components/chamado/chamado-create/chamado-create.component';
@@ -16,6 +14,7 @@ import { EstoqueDeleteComponent } from './components/estoque/estoque-delete/esto
 import { EstoqueListComponent } from './components/estoque/estoque-list/estoque-list.component';
 import { EstoqueUpdateComponent } from './components/estoque/estoque-update/estoque-update.component';
 import { FaturamentoCreateComponent } from './components/faturamento/faturamento-create/faturamento-create.component';
+import { FaturamentoDeleteComponent } from './components/faturamento/faturamento-delete/faturamento-delete.component';
 import { FaturamentoListComponent } from './components/faturamento/faturamento-list/faturamento-list.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavComponent } from './components/nav/nav.component';
