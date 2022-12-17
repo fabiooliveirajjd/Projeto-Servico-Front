@@ -46,6 +46,8 @@ import { TecnicoDeleteComponent } from "./components/tecnico/tecnico-delete/tecn
 import { TecnicoListComponent } from "./components/tecnico/tecnico-list/tecnico-list.component";
 import { TecnicoUpdateComponent } from "./components/tecnico/tecnico-update/tecnico-update.component";
 import { TecnicoViewComponent } from "./components/tecnico/tecnico-view/tecnico-view.component";
+import { ClienteViewComponent } from './components/cliente/cliente-view/cliente-view.component';
+import { EstoqueViewComponent } from './components/estoque/estoque-view/estoque-view.component';
 
 registerLocaleData(ptBr);
 
@@ -74,6 +76,8 @@ registerLocaleData(ptBr);
     FaturamentoCreateComponent,
     FaturamentoDeleteComponent,
     TecnicoViewComponent,
+    ClienteViewComponent,
+    EstoqueViewComponent,
   ],
   imports: [
     BrowserModule,

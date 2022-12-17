@@ -1,0 +1,36 @@
+.container {
+    inline-size: 45rem;
+    margin: auto;
+    background-color: rgba(236, 234, 234, 0.295);
+    padding: 1rem;
+    border-radius: .6rem;
+}
+
+.fullWildth {
+    inline-size: 100%;
+    background-color: rgba(236, 234, 234, 0.295);
+}
+
+h1,
+p {
+    text-align: center;
+}
+
+img {
+    block-size: 17rem;
+    margin: auto;
+}
+
+.section {
+    margin-block-end: 1rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+button {
+    margin-block-start: .8rem;
+}
+
+mat-icon {
+    opacity: .8;
+}

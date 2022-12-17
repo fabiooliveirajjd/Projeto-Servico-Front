@@ -23,6 +23,7 @@ import { TecnicoCreateComponent } from './components/tecnico/tecnico-create/tecn
 import { TecnicoDeleteComponent } from './components/tecnico/tecnico-delete/tecnico-delete.component';
 import { TecnicoListComponent } from './components/tecnico/tecnico-list/tecnico-list.component';
 import { TecnicoUpdateComponent } from './components/tecnico/tecnico-update/tecnico-update.component';
+import { ClienteViewComponent } from './components/cliente/cliente-view/cliente-view.component';
 
 const routes: Routes = [
   { path: '', component: NavComponent, children: [
@@ -35,6 +36,7 @@ const routes: Routes = [
 
   { path: 'clientes', component: ClienteListComponent },
   { path: 'clientes/create', component: ClienteCreateComponent },
+  { path: 'clientes/view/:idCliente', component: ClienteViewComponent },
   { path: 'clientes/update/:idCliente', component: ClienteUpdateComponent },
   { path: 'clientes/delete/:idCliente', component: ClienteDeleteComponent },
 
