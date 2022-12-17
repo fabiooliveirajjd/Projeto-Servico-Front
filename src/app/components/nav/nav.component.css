@@ -4,7 +4,7 @@
 
 .sidenav {
     inline-size: 13rem;
-    background-color: rgba(185, 185, 189, 0.295);
+    background-color: rgba(83, 83, 83, 0.295);
 
 }
 
@@ -16,6 +16,6 @@ img {
 
 .menu {
     margin: 1rem 0 0 1rem;
-    color: rgb(243, 241, 241);
+    color: rgb(20, 20, 20);
     background-color: rgb(128, 128, 131);
 }

@@ -1,3 +1,5 @@
+import { FaturamentoViewComponent } from './components/faturamento/faturamento-view/faturamento-view.component';
+import { Faturamento } from 'src/app/models/faturamento';
 import { ChamadoViewComponent } from './components/chamado/chamado-view/chamado-view.component';
 import { EstoqueViewComponent } from './components/estoque/estoque-view/estoque-view.component';
 import { TecnicoViewComponent } from './components/tecnico/tecnico-view/tecnico-view.component';
@@ -55,8 +57,9 @@ const routes: Routes = [
   
   { path: 'faturamentos', component: FaturamentoListComponent},
   { path: 'faturamentos/create', component: FaturamentoCreateComponent},
-  { path: 'faturamentos/delete/:idFaturamento', component: FaturamentoDeleteComponent}
-
+  { path: 'faturamentos/view/:idFaturamento', component: FaturamentoViewComponent}
+  
+ 
 
   ] }
 ];

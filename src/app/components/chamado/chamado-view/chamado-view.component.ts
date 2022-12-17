@@ -8,11 +8,11 @@ import { Tecnico } from "./../../../models/tecnico";
 import { ClienteService } from "./../../../services/cliente.service";
 import { TecnicoService } from "./../../../services/tecnico.service";
 @Component({
-  selector: 'app-chamado-view',
-  templateUrl: './chamado-view.component.html',
-  styleUrls: ['./chamado-view.component.css']
+  selector: "app-chamado-view",
+  templateUrl: "./chamado-view.component.html",
+  styleUrls: ["./chamado-view.component.css"],
 })
-export class ChamadoViewComponent  implements OnInit {
+export class ChamadoViewComponent implements OnInit {
   chamado: Chamado = {
     prioridade: "",
     status: "",
@@ -63,11 +63,4 @@ export class ChamadoViewComponent  implements OnInit {
       this.tecnicos = resposta;
     });
   }
-  delete(): void {
-    this.chamadoService.delete(this.chamado.idChamado).subscribe((resposta) => {
-      this.router.navigate(["/chamados"]);
-      console.log();
-    });
-  }
 }
-
