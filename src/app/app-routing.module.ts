@@ -1,3 +1,4 @@
+import { EstoqueViewComponent } from './components/estoque/estoque-view/estoque-view.component';
 import { TecnicoViewComponent } from './components/tecnico/tecnico-view/tecnico-view.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
@@ -47,6 +48,7 @@ const routes: Routes = [
 
   { path: 'estoques', component: EstoqueListComponent },
   { path: 'estoques/create', component: EstoqueCreateComponent },
+  { path: 'estoques/view/:idEstoque', component: EstoqueViewComponent },
   { path: 'estoques/update/:idEstoque', component: EstoqueUpdateComponent},
   { path: 'estoques/delete/:idEstoque', component: EstoqueDeleteComponent},
   
