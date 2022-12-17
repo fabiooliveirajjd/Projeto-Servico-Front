@@ -1,97 +1,96 @@
-<div class="container"> 
+<div class="container">
+  <h1>LISTA DE CHAMADO</h1>
 
-    <h1 >LISTA DE CHAMADO</h1>
+  <button routerLink="create" class="mat-elevation-z8" mat-stroked-button>
+    Adicionar Chamado
+  </button>
 
-    <button routerLink="create" class="mat-elevation-z8 " mat-stroked-button >Adicionar Chamado</button>
-  
-    <mat-form-field appearance="standard">
-      <mat-label>Pesquisar Chamado </mat-label>
-      <input matInput (keyup)="applyFilter($event)" placeholder="Digite dados do Chamado" #input>
-    </mat-form-field>
+  <mat-form-field class="container1">
+    <mat-label>Pesquisar Chamado </mat-label>
+    <input
+      matInput
+      (keyup)="applyFilter($event)"
+      placeholder="Digite dados do Chamado"
+      #input
+    />
+  </mat-form-field>
 
   <!--<mat-radio-group color="primary">
         <mat-radio-button  >ABERTO</mat-radio-button>
         <mat-radio-button >ANDAMENTO</mat-radio-button>
         <mat-radio-button >ENCERRADO</mat-radio-button>
-      </mat-radio-group>-->  
+      </mat-radio-group>-->
 
-    <div class="mat-elevation-z8">
+  <div class="mat-elevation-z8">
+    <table class="container1" mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="idChamado">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let element">{{ element.idChamado }}</td>
+      </ng-container>
 
-      <table  class="container1" mat-table [dataSource]="dataSource">
-  
-        <ng-container matColumnDef="idChamado">
-          <th mat-header-cell *matHeaderCellDef> ID </th>
-          <td mat-cell *matCellDef="let element"> {{ element.idChamado }} </td>
-        </ng-container>
-     
-        <ng-container matColumnDef="prioridade">
-          <th mat-header-cell *matHeaderCellDef> PRIORIDADE </th>
-          <td mat-cell *matCellDef="let element"> {{ element.prioridade }} </td>
-        </ng-container>
-     
-        <ng-container matColumnDef="status">
-          <th mat-header-cell *matHeaderCellDef> STATUS </th>
-          <td mat-cell *matCellDef="let element"> {{ element.status }} </td>
-        </ng-container>
-    
-        <ng-container matColumnDef="observacoes">
-          <th mat-header-cell *matHeaderCellDef> STATUS </th>
-          <td mat-cell *matCellDef="let element"> {{ element.observacoes }} </td>
-        </ng-container>
+      <ng-container matColumnDef="prioridade">
+        <th mat-header-cell *matHeaderCellDef>PRIORIDADE</th>
+        <td mat-cell *matCellDef="let element">{{ element.prioridade }}</td>
+      </ng-container>
 
-        <ng-container matColumnDef="titulo">
-            <th mat-header-cell *matHeaderCellDef> TÍTULO </th>
-            <td mat-cell *matCellDef="let element"> {{ element.titulo }} </td>
-          </ng-container>
+      <ng-container matColumnDef="status">
+        <th mat-header-cell *matHeaderCellDef>STATUS</th>
+        <td mat-cell *matCellDef="let element">{{ element.status }}</td>
+      </ng-container>
 
-          <ng-container matColumnDef="tecnico">
-            <th mat-header-cell *matHeaderCellDef> TÉCNICO </th>
-            <td mat-cell *matCellDef="let element"> {{ element.nomeTecnico }} </td>
-          </ng-container>
- 
-          <ng-container matColumnDef="cliente">
-            <th mat-header-cell *matHeaderCellDef> CLIENTE </th>
-            <td mat-cell *matCellDef="let element"> {{ element.nomeCliente }} </td>
-          </ng-container>
+      <ng-container matColumnDef="observacoes">
+        <th mat-header-cell *matHeaderCellDef>STATUS</th>
+        <td mat-cell *matCellDef="let element">{{ element.observacoes }}</td>
+      </ng-container>
 
-          <ng-container matColumnDef="valor">
-            <th mat-header-cell *matHeaderCellDef> VALOR </th>
-            <td mat-cell *matCellDef="let element"> {{ element.valor }} </td>
-          </ng-container>
+      <ng-container matColumnDef="titulo">
+        <th mat-header-cell *matHeaderCellDef>TÍTULO</th>
+        <td mat-cell *matCellDef="let element">{{ element.titulo }}</td>
+      </ng-container>
 
-          <ng-container matColumnDef="dataAbertura">
-            <th mat-header-cell *matHeaderCellDef> DATA DE ABERTURA </th>
-            <td mat-cell *matCellDef="let element"> {{ element.dataAbertura }} </td>
-          </ng-container>
-  
-          <ng-container matColumnDef="dataFechamento">
-            <th mat-header-cell *matHeaderCellDef> DATA DE FECHAMENTO</th>
-            <td mat-cell *matCellDef="let element"> {{ element.dataFechamento }} </td>
-          </ng-container>
-  
-        <ng-container matColumnDef="acoes">
-          <th mat-header-cell *matHeaderCellDef> AÇÔES </th>
-          <td mat-cell *matCellDef="let element"> 
-            <a routerLink="update/{{ element.idChamado }}">
+      <ng-container matColumnDef="tecnico">
+        <th mat-header-cell *matHeaderCellDef>TÉCNICO</th>
+        <td mat-cell *matCellDef="let element">{{ element.nomeTecnico }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="cliente">
+        <th mat-header-cell *matHeaderCellDef>CLIENTE</th>
+        <td mat-cell *matCellDef="let element">{{ element.nomeCliente }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="valor">
+        <th mat-header-cell *matHeaderCellDef>VALOR</th>
+        <td mat-cell *matCellDef="let element">{{ element.valor }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="dataAbertura">
+        <th mat-header-cell *matHeaderCellDef>DATA DE ABERTURA</th>
+        <td mat-cell *matCellDef="let element">{{ element.dataAbertura }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="dataFechamento">
+        <th mat-header-cell *matHeaderCellDef>DATA DE FECHAMENTO</th>
+        <td mat-cell *matCellDef="let element">{{ element.dataFechamento }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="acoes">
+        <th mat-header-cell *matHeaderCellDef>AÇÔES</th>
+        <td mat-cell *matCellDef="let element">
+          <a routerLink="update/{{ element.idChamado }}">
             <i class="material-icons edit">edit</i>
-         </a>
+          </a>
 
-         
-         <a routerLink="delete/{{ element.idChamado }}">
+          <a routerLink="delete/{{ element.idChamado }}">
             <i class="material-icons delete">visibility</i>
-         </a>
-      </td>
-        </ng-container>
-     
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
-    
-      <mat-paginator  class="container" [pageSizeOptions]="[10, 20]"
-                     showFirstLastButtons 
-                     >
-      </mat-paginator>
-      
-    </div>
-    
+          </a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator class="container1" [pageSizeOptions]="[7, 10, 20]">
+    </mat-paginator>
   </div>
+</div>

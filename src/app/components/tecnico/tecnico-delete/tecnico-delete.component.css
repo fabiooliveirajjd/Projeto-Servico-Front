@@ -1,24 +1,27 @@
-.container{
-    inline-size: 32rem;
+.container {
+    inline-size: 45rem;
     margin: auto;
-     background-color: rgb(203, 203, 204);
+    background-color: rgba(236, 234, 234, 0.295);
     padding: 1rem;
     border-radius: .6rem;
 }
 
-.fullWildth{
+.fullWildth {
     inline-size: 100%;
+    background-color: rgba(236, 234, 234, 0.295);
 }
 
-h1, p{
+h1,
+p {
     text-align: center;
 }
-img{
-    block-size: 15rem;
+
+img {
+    block-size: 17rem;
     margin: auto;
 }
 
-.section{
+.section {
     margin-block-end: 1rem;
     display: flex;
     justify-content: space-between;
@@ -26,14 +29,14 @@ img{
 
 button {
     margin-block-start: .8rem;
- }
+}
 
 
- p {
+p {
     margin-block-start: 4rem;
     opacity: .5;
- }
+}
 
- mat-icon {
+mat-icon {
     opacity: .8;
- }
+}

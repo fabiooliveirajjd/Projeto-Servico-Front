@@ -1,11 +1,12 @@
 .card {
-    width: 80%;
+    inline-size: 80%;
     margin: 1rem auto;
     background-color: rgb(203, 203, 204);
     border-radius: 2rem;
 }
-img{
-    height: 25rem;
-    width: 100%;
+
+img {
+    block-size: 25rem;
+    inline-size: 100%;
     margin: .8rem auto 1rem auto;
 }

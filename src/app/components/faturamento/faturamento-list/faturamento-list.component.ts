@@ -34,6 +34,7 @@ export class FaturamentoListComponent implements OnInit {
     this.service.findAll().subscribe((resposta) => {
       this.ELEMENT_DATA = resposta;
       this.dataSource = new MatTableDataSource<Faturamento>(resposta);
+      this.dataSource.paginator = this.paginator;
     });
   }
 

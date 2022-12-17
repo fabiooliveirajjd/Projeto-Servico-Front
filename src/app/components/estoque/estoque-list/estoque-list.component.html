@@ -1,70 +1,72 @@
+<div class="container">
+  <h1>LISTA DE PRODUTOS DO ESTOQUE</h1>
 
-<div class="container"> 
+  <button routerLink="create" class="mat-elevation-z8" mat-stroked-button>
+    Adicionar Produto no Estoque
+  </button>
 
-    <h1 >Lista de Produtos do Estoque</h1>
+  <mat-form-field class="container1">
+    <mat-label>Pesquisar Produto</mat-label>
+    <input
+      matInput
+      (keyup)="applyFilter($event)"
+      placeholder="Digite dados do Produto"
+      #input
+    />
+  </mat-form-field>
 
-    <button routerLink="create" class="mat-elevation-z8 " mat-stroked-button >Adicionar Produto no Estoque</button>
-  
-    <mat-form-field appearance="standard">
-      <mat-label>Pesquisar Produto</mat-label>
-      <input matInput (keyup)="applyFilter($event)" placeholder="Digite dados do Produto" #input>
-    </mat-form-field>
+  <div class="mat-elevation-z8">
+    <table class="container1" mat-table [dataSource]="dataSource">
+      <ng-container matColumnDef="idEstoque">
+        <th mat-header-cell *matHeaderCellDef>ID</th>
+        <td mat-cell *matCellDef="let element">{{ element.idEstoque }}</td>
+      </ng-container>
 
-    <div class="mat-elevation-z8">
+      <ng-container matColumnDef="descricao">
+        <th mat-header-cell *matHeaderCellDef>DESCRIÇÃO</th>
+        <td mat-cell *matCellDef="let element">{{ element.descricao }}</td>
+      </ng-container>
 
-      <table  class="container1" mat-table [dataSource]="dataSource">
-  
-        <ng-container matColumnDef="idEstoque">
-          <th mat-header-cell *matHeaderCellDef> ID </th>
-          <td mat-cell *matCellDef="let element"> {{ element.idEstoque }} </td>
-        </ng-container>
-     
-        <ng-container matColumnDef="descricao">
-          <th mat-header-cell *matHeaderCellDef> DESCRIÇÃO </th>
-          <td mat-cell *matCellDef="let element"> {{ element.descricao}} </td>
-        </ng-container>
-    
-        <ng-container matColumnDef="quantidade">
-          <th mat-header-cell *matHeaderCellDef> QUANTIDADE </th>
-          <td mat-cell *matCellDef="let element"> {{ element.quantidade }} </td>
-        </ng-container >
-       
-        <ng-container matColumnDef="valorCompra">
-          <th mat-header-cell *matHeaderCellDef> VALOR DA COMPRA </th>
-          <td mat-cell *matCellDef="let element"> {{ element.valorCompra }} </td>
-        </ng-container>
+      <ng-container matColumnDef="quantidade">
+        <th mat-header-cell *matHeaderCellDef>QUANTIDADE</th>
+        <td mat-cell *matCellDef="let element">{{ element.quantidade }}</td>
+      </ng-container>
 
-        <ng-container matColumnDef="dataCompra">
-            <th mat-header-cell *matHeaderCellDef> DATA DA COMPRA </th>
-            <td mat-cell *matCellDef="let element"> {{ element.dataCompra }} </td>
-          </ng-container>
+      <ng-container matColumnDef="valorCompra">
+        <th mat-header-cell *matHeaderCellDef>VALOR DA COMPRA</th>
+        <td mat-cell *matCellDef="let element">{{ element.valorCompra }}</td>
+      </ng-container>
 
-          <ng-container matColumnDef="tipo">
-            <th mat-header-cell *matHeaderCellDef> TIPO </th>
-            <td mat-cell *matCellDef="let element"> {{ element.tipo }} </td>
-          </ng-container>
-    
-        <ng-container matColumnDef="acoes">
-          <th mat-header-cell *matHeaderCellDef> AÇÔES </th>
-          <td mat-cell *matCellDef="let element"> 
-            <a routerLink="update/{{ element.idEstoque }}">
+      <ng-container matColumnDef="dataCompra">
+        <th mat-header-cell *matHeaderCellDef>DATA DA COMPRA</th>
+        <td mat-cell *matCellDef="let element">{{ element.dataCompra }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="tipo">
+        <th mat-header-cell *matHeaderCellDef>TIPO</th>
+        <td mat-cell *matCellDef="let element">{{ element.tipo }}</td>
+      </ng-container>
+
+      <ng-container matColumnDef="acoes">
+        <th mat-header-cell *matHeaderCellDef>AÇÔES</th>
+        <td mat-cell *matCellDef="let element">
+          <a routerLink="update/{{ element.idEstoque }}">
             <i class="material-icons edit">edit</i>
-         </a>
-         <a routerLink="delete/{{ element.idEstoque }}">
+          </a>
+          <a routerLink="delete/{{ element.idEstoque }}">
             <i class="material-icons delete">delete</i>
-         </a>
-      </td>
-        </ng-container>
-    
-        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-      </table>
-    
-      <mat-paginator  class="container" [pageSizeOptions]="[10, 20]"
-                     showFirstLastButtons 
-                     >
-      </mat-paginator>
-      
-    </div>
-    
+          </a>
+        </td>
+      </ng-container>
+
+      <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+      <tr mat-row *matRowDef="let row; columns: displayedColumns"></tr>
+    </table>
+
+    <mat-paginator
+      class="container1"
+      [pageSizeOptions]="[7, 10, 20]"
+    >
+    </mat-paginator>
   </div>
+</div>

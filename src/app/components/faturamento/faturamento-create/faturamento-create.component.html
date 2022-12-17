@@ -4,7 +4,7 @@
     <img
       class="fullWildth1"
       mat-card-image
-      src="assets/imagem/im1.svg"
+      src="assets/imagem/img2.svg"
       alt="Cadastrar cliente"
     />
 
@@ -44,13 +44,14 @@
       </mat-form-field>
     </div>
 
-    
-    
     <mat-form-field class="full-width" appearance="outline">
       <mat-label>Data inicial de faturamento</mat-label>
-      <input [(ngModel)]="faturamento.dataInicioFaturamento"
-      name="dataInicioFaturamento" 
-      matInput [matDatepicker]="picker"  />
+      <input
+        [(ngModel)]="faturamento.dataInicioFaturamento"
+        name="dataInicioFaturamento"
+        matInput
+        [matDatepicker]="picker"
+      />
       <mat-datepicker-toggle
         matIconSuffix
         [for]="picker"
@@ -59,23 +60,25 @@
     </mat-form-field>
 
     <mat-form-field appearance="outline" class="full-width">
-        <mat-label>Data fim de faturamento</mat-label>
-        <input 
+      <mat-label>Data fim de faturamento</mat-label>
+      <input
         [(ngModel)]="faturamento.dataFimFaturamento"
         name="dataFimFaturamento"
-        matInput [matDatepicker]="datepicker">
-        <mat-datepicker-toggle matIconSuffix [for]="datepicker"></mat-datepicker-toggle>
-        <mat-datepicker #datepicker>
-        </mat-datepicker>
-      </mat-form-field>
-   
+        matInput
+        [matDatepicker]="datepicker"
+      />
+      <mat-datepicker-toggle
+        matIconSuffix
+        [for]="datepicker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #datepicker> </mat-datepicker>
+    </mat-form-field>
+
     <mat-form-field class="full-width" appearance="outline">
       <mat-label>Valor</mat-label>
       <input
         [(ngModel)]="faturamento.valorTotal"
         name="valorTotal"
-        
-        
         matInput
         placeholder="200"
       />

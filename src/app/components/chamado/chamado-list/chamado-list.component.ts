@@ -40,6 +40,7 @@ export class ChamadoListComponent implements OnInit {
     this.service.findAll().subscribe((resposta) => {
       this.ELEMENT_DATA = resposta;
       this.dataSource = new MatTableDataSource<Chamado>(resposta);
+      this.dataSource.paginator = this.paginator;
     });
   }
 

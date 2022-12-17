@@ -1,25 +1,25 @@
 .container {
    inline-size: 45rem;
    margin: auto;
-   background-color: rgb(203, 203, 204);
+   background-color: rgba(236, 234, 234, 0.295);
    padding: 1rem;
-  border-radius: .6rem;
+   border-radius: .6rem;
 }
 
 .full-width {
    inline-size: 100%;
 }
 
-.fullWildth1{
+.fullWildth1 {
    inline-size: 100%;
 }
 
-h1, img, p{
+h1 {
    text-align: center;
 }
 
-img{
-   block-size: 11rem;
+img {
+   block-size: 10rem;
    margin: auto;
 }
 
@@ -29,19 +29,19 @@ img{
 }
 
 .status-prioridade mat-form-field {
-   width: 49%;
+   inline-size: 49%;
 }
 
 .observacoes {
-   min-height: 3rem;
-   max-height: 10rem;
+   min-block-size: 3rem;
+   max-block-size: 10rem;
 }
 
 button {
-   margin-top: .5rem;
+   margin-block-start: .5rem;
 }
 
 p {
-   margin-top: 3rem;
+   margin-block-start: 3rem;
    opacity: .5;
 }
