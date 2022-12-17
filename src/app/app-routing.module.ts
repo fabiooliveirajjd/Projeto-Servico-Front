@@ -7,7 +7,6 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
 import { ChamadoCreateComponent } from './components/chamado/chamado-create/chamado-create.component';
-import { ChamadoDeleteComponent } from './components/chamado/chamado-delete/chamado-delete.component';
 import { ChamadoListComponent } from './components/chamado/chamado-list/chamado-list.component';
 import { ChamadoUpdateComponent } from './components/chamado/chamado-update/chamado-update.component';
 import { ClienteCreateComponent } from './components/cliente/cliente-create/cliente-create.component';
@@ -19,7 +18,6 @@ import { EstoqueDeleteComponent } from './components/estoque/estoque-delete/esto
 import { EstoqueListComponent } from './components/estoque/estoque-list/estoque-list.component';
 import { EstoqueUpdateComponent } from './components/estoque/estoque-update/estoque-update.component';
 import { FaturamentoCreateComponent } from './components/faturamento/faturamento-create/faturamento-create.component';
-import { FaturamentoDeleteComponent } from './components/faturamento/faturamento-delete/faturamento-delete.component';
 import { FaturamentoListComponent } from './components/faturamento/faturamento-list/faturamento-list.component';
 import { HomeComponent } from './components/home/home.component';
 import { NavComponent } from './components/nav/nav.component';
@@ -46,8 +44,9 @@ const routes: Routes = [
 
   { path: 'chamados', component: ChamadoListComponent },
   { path: 'chamados/create', component: ChamadoCreateComponent },
-  { path:  'chamados/view/:idChamado', component: ChamadoViewComponent},
-  { path: 'chamados/update/:idChamado', component: ChamadoUpdateComponent },
+  { path: 'chamados/view/:idChamado', component: ChamadoViewComponent},
+  { path: 'chamados/update/:idChamado', component: ChamadoUpdateComponent},
+  
 
   { path: 'estoques', component: EstoqueListComponent },
   { path: 'estoques/create', component: EstoqueCreateComponent },
