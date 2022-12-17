@@ -1,3 +1,4 @@
+import { ChamadoViewComponent } from './components/chamado/chamado-view/chamado-view.component';
 import { EstoqueViewComponent } from './components/estoque/estoque-view/estoque-view.component';
 import { TecnicoViewComponent } from './components/tecnico/tecnico-view/tecnico-view.component';
 import { NgModule } from '@angular/core';
@@ -43,8 +44,8 @@ const routes: Routes = [
 
   { path: 'chamados', component: ChamadoListComponent },
   { path: 'chamados/create', component: ChamadoCreateComponent },
+  { path:  'chamados/view/:idChamado', component: ChamadoViewComponent},
   { path: 'chamados/update/:idChamado', component: ChamadoUpdateComponent },
-  { path: 'chamados/delete/:idChamado', component: ChamadoDeleteComponent },
 
   { path: 'estoques', component: EstoqueListComponent },
   { path: 'estoques/create', component: EstoqueCreateComponent },

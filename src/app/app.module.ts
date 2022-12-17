@@ -48,6 +48,7 @@ import { TecnicoUpdateComponent } from "./components/tecnico/tecnico-update/tecn
 import { TecnicoViewComponent } from "./components/tecnico/tecnico-view/tecnico-view.component";
 import { ClienteViewComponent } from './components/cliente/cliente-view/cliente-view.component';
 import { EstoqueViewComponent } from './components/estoque/estoque-view/estoque-view.component';
+import { ChamadoViewComponent } from './components/chamado/chamado-view/chamado-view.component';
 
 registerLocaleData(ptBr);
 
@@ -78,6 +79,7 @@ registerLocaleData(ptBr);
     TecnicoViewComponent,
     ClienteViewComponent,
     EstoqueViewComponent,
+    ChamadoViewComponent,
   ],
   imports: [
     BrowserModule,
