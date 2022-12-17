@@ -48,6 +48,7 @@ import { ClienteViewComponent } from './components/cliente/cliente-view/cliente-
 import { EstoqueViewComponent } from './components/estoque/estoque-view/estoque-view.component';
 import { ChamadoViewComponent } from './components/chamado/chamado-view/chamado-view.component';
 import { FaturamentoViewComponent } from './components/faturamento/faturamento-view/faturamento-view.component';
+import { ToastrModule } from "ngx-toastr";
 
 registerLocaleData(ptBr);
 
@@ -104,6 +105,7 @@ registerLocaleData(ptBr);
     MatNativeDateModule,
     ReactiveFormsModule,
     DatePipe,
+    ToastrModule
   ],
   providers: [{ provide: LOCALE_ID, useValue: "pt" }],
   bootstrap: [AppComponent],
