@@ -1,3 +1,4 @@
+import { TecnicoViewComponent } from './components/tecnico/tecnico-view/tecnico-view.component';
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes } from '@angular/router';
 
@@ -28,6 +29,7 @@ const routes: Routes = [
   { path: 'home', component: HomeComponent }, 
   { path: 'tecnicos', component: TecnicoListComponent },
   { path: 'tecnicos/create', component: TecnicoCreateComponent },
+  { path: 'tecnicos/view/:idTecnico', component: TecnicoViewComponent },
   { path: 'tecnicos/update/:idTecnico', component: TecnicoUpdateComponent },
   { path: 'tecnicos/delete/:idTecnico', component: TecnicoDeleteComponent },
 

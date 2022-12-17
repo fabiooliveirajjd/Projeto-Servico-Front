@@ -1,0 +1,63 @@
+<div class="container mat-elevation-z8">
+    <div class="form">
+      <h1 class="fullWildth">Visuallizar Dados do Técnico</h1>
+  
+      <img
+        class="fullWildth"
+        mat-card-image
+        src="assets/imagem/view.svg"
+        alt="Cadastrar tecnico"
+      />
+  
+      <mat-form-field class="fullWildth" appearance="fill">
+        <mat-label>Nome</mat-label>
+        <input
+          [(ngModel)]="tecnico.nome"
+          nome="nome"
+          [disabled]="true"
+          matInput
+        />
+        <mat-icon matSuffix>badge</mat-icon>
+      </mat-form-field>
+  
+      <mat-form-field class="fullWildth" appearance="fill">
+        <mat-label>CPF</mat-label>
+        <input [(ngModel)]="tecnico.cpf" nome="cpf" [disabled]="true" matInput />
+        <mat-icon matSuffix>dialpad</mat-icon>
+      </mat-form-field>
+  
+      <mat-form-field class="fullWildth" appearance="fill">
+        <mat-label>Email</mat-label>
+        <input
+          [(ngModel)]="tecnico.email"
+          nome="email"
+          [disabled]="true"
+          matInput
+          [disabled]="true"
+        />
+        <mat-icon matSuffix>alternate_email</mat-icon>
+      </mat-form-field>
+  
+      <mat-form-field class="fullWildth" appearance="fill">
+        <mat-label>Senha</mat-label>
+        <input
+          [(ngModel)]="tecnico.senha"
+          nome="senha"
+          [disabled]="true"
+          matInput
+          [disabled]="true"
+          type="password"
+        />
+        <mat-icon matSuffix>vpn_key</mat-icon>
+      </mat-form-field>
+  
+      <button
+        routerLink="../../"
+        class="fullWildth mat-elevation-z8"
+        mat-stroked-button
+      >
+        Voltar
+      </button>
+    </div>
+  </div>
+  
