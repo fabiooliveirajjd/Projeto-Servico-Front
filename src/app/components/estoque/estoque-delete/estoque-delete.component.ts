@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
+import { ToastrService } from "ngx-toastr";
 import { Estoque } from "src/app/models/estoque";
 import { EstoqueService } from "src/app/services/estoque.service";
 @Component({
@@ -20,6 +21,7 @@ export class EstoqueDeleteComponent implements OnInit {
   constructor(
     private service: EstoqueService,
     private router: Router,
+    private toast: ToastrService,
     private route: ActivatedRoute
   ) {}
 
@@ -36,6 +38,7 @@ export class EstoqueDeleteComponent implements OnInit {
 
   delete(): void {
     this.service.delete(this.estoque.idEstoque).subscribe(() => {
+      this.toast.success("Produto deletado com sucesso", "Delete");
       this.router.navigate(["/estoques"]);
     });
   }

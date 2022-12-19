@@ -1,3 +1,4 @@
+import { ToastrService } from "ngx-toastr";
 import { ActivatedRoute, Router } from "@angular/router";
 import { Component, OnInit } from "@angular/core";
 import { FormControl, Validators } from "@angular/forms";
@@ -25,6 +26,7 @@ export class TecnicoUpdateComponent implements OnInit {
 
   constructor(
     private service: TecnicoService,
+    private toast: ToastrService,
     private router: Router,
     private route: ActivatedRoute
   ) {}
@@ -47,6 +49,7 @@ export class TecnicoUpdateComponent implements OnInit {
   }
   update(): void {
     this.service.update(this.tecnico).subscribe(() => {
+      this.toast.success("Técnico atualizado com sucesso", "Update");
       this.router.navigate(["/tecnicos"]);
     });
   }

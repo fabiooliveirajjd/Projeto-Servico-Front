@@ -11,6 +11,7 @@ import { Tecnico } from "./../../../models/tecnico";
 import { ClienteService } from "./../../../services/cliente.service";
 import { TecnicoService } from "./../../../services/tecnico.service";
 import { Chamado } from "src/app/models/chamado";
+import { ToastrService } from "ngx-toastr";
 
 @Component({
   selector: "app-faturamento-create",
@@ -42,6 +43,7 @@ export class FaturamentoCreateComponent implements OnInit {
     private clienteService: ClienteService,
     private tecnicoService: TecnicoService,
     private chamadoService: ChamadoService,
+    private toast: ToastrService,
     private router: Router
   ) {}
 
@@ -52,6 +54,7 @@ export class FaturamentoCreateComponent implements OnInit {
 
   create(): void {
     this.faturamentoService.create(this.faturamento).subscribe((resposta) => {
+      this.toast.success("Faturamento criado com sucesso", "Cadastro");
       this.router.navigate(["/faturamentos"]);
       console.log();
     });

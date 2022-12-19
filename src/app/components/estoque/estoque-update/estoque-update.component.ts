@@ -1,6 +1,7 @@
 import { Component, OnInit } from "@angular/core";
 import { FormControl, Validators } from "@angular/forms";
 import { ActivatedRoute, Router } from "@angular/router";
+import { ToastrService } from "ngx-toastr";
 import { Estoque } from "src/app/models/estoque";
 import { EstoqueService } from "src/app/services/estoque.service";
 
@@ -26,6 +27,7 @@ export class EstoqueUpdateComponent implements OnInit {
   constructor(
     private service: EstoqueService,
     private router: Router,
+    private toast: ToastrService,
     private route: ActivatedRoute
   ) {}
 
@@ -51,6 +53,7 @@ export class EstoqueUpdateComponent implements OnInit {
 
   update(): void {
     this.service.update(this.estoque).subscribe(() => {
+      this.toast.success("Produto atualizado com sucesso", "Update");
       this.router.navigate(["/estoques"]);
     });
   }

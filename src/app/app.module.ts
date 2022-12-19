@@ -105,7 +105,11 @@ registerLocaleData(ptBr);
     MatNativeDateModule,
     ReactiveFormsModule,
     DatePipe,
-    ToastrModule
+    ToastrModule.forRoot({
+      timeOut: 4000,
+      closeButton: true,
+      progressBar: true
+    })
   ],
   providers: [{ provide: LOCALE_ID, useValue: "pt" }],
   bootstrap: [AppComponent],

@@ -8,6 +8,7 @@ import { Cliente } from "./../../../models/cliente";
 import { Tecnico } from "./../../../models/tecnico";
 import { ClienteService } from "./../../../services/cliente.service";
 import { TecnicoService } from "./../../../services/tecnico.service";
+import { ToastrService } from "ngx-toastr";
 
 @Component({
   selector: "app-chamado-update",
@@ -42,6 +43,7 @@ export class ChamadoUpdateComponent implements OnInit {
     private chamadoService: ChamadoService,
     private clienteService: ClienteService,
     private tecnicoService: TecnicoService,
+    private toast: ToastrService,
     private router: Router,
     private route: ActivatedRoute
   ) {}
@@ -64,6 +66,7 @@ export class ChamadoUpdateComponent implements OnInit {
 
   update(): void {
     this.chamadoService.update(this.chamado).subscribe((resposta) => {
+      this.toast.success("Chamado atualizado com sucesso", "Update");
       this.router.navigate(["/chamados"]);
       console.log();
     });

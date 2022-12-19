@@ -3,6 +3,7 @@ import { Component, OnInit } from "@angular/core";
 import { FormControl, Validators } from "@angular/forms";
 import { Cliente } from "src/app/models/cliente";
 import { ClienteService } from "src/app/services/cliente.service";
+import { ToastrService } from "ngx-toastr";
 @Component({
   selector: "app-cliente-create",
   templateUrl: "./cliente-create.component.html",
@@ -23,7 +24,11 @@ export class ClienteCreateComponent implements OnInit {
   email: FormControl = new FormControl(null, Validators.email);
   senha: FormControl = new FormControl(null, Validators.minLength(3));
 
-  constructor(private service: ClienteService, private router: Router) {}
+  constructor(
+    private service: ClienteService,
+    private toast: ToastrService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {}
 
@@ -35,6 +40,7 @@ export class ClienteCreateComponent implements OnInit {
 
   create(): void {
     this.service.create(this.cliente).subscribe(() => {
+      this.toast.success("Cliente cadastrado com sucesso", "Cadastro");
       this.router.navigate(["/clientes"]);
     });
   }

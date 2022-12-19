@@ -1,3 +1,4 @@
+import { ToastrModule, ToastrService } from "ngx-toastr";
 import { Component, OnInit } from "@angular/core";
 import { FormControl, Validators } from "@angular/forms";
 import { Router } from "@angular/router";
@@ -24,7 +25,11 @@ export class TecnicoCreateComponent implements OnInit {
   email: FormControl = new FormControl(null, Validators.email);
   senha: FormControl = new FormControl(null, Validators.minLength(3));
 
-  constructor(private service: TecnicoService, private router: Router) {}
+  constructor(
+    private service: TecnicoService,
+    private toast: ToastrService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {}
 
@@ -36,6 +41,7 @@ export class TecnicoCreateComponent implements OnInit {
 
   create(): void {
     this.service.create(this.tecnico).subscribe(() => {
+      this.toast.success("Técnico cadastrado com sucesso", "Cadastro");
       this.router.navigate(["/tecnicos"]);
     });
   }

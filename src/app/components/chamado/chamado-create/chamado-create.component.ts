@@ -8,6 +8,7 @@ import { Cliente } from "./../../../models/cliente";
 import { Tecnico } from "./../../../models/tecnico";
 import { ClienteService } from "./../../../services/cliente.service";
 import { TecnicoService } from "./../../../services/tecnico.service";
+import { ToastrService } from "ngx-toastr";
 
 @Component({
   selector: "app-chamado-create",
@@ -42,6 +43,7 @@ export class ChamadoCreateComponent implements OnInit {
     private chamadoService: ChamadoService,
     private clienteService: ClienteService,
     private tecnicoService: TecnicoService,
+    private toast: ToastrService,
     private router: Router
   ) {}
 
@@ -52,6 +54,7 @@ export class ChamadoCreateComponent implements OnInit {
 
   create(): void {
     this.chamadoService.create(this.chamado).subscribe((resposta) => {
+      this.toast.success("Chamado criado com sucesso", "Cadastro");
       this.router.navigate(["/chamados"]);
       console.log();
     });
