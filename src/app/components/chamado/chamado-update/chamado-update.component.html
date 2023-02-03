@@ -5,8 +5,7 @@
       class="fullWildth1"
       mat-card-image
       src="assets/imagem/imgupdate.svg"
-      alt="Cadastrar cliente"
-    />
+      alt="Cadastrar cliente" />
 
     <div class="tecnico">
       <mat-form-field class="full-width" appearance="outline">
@@ -15,8 +14,7 @@
           [disabled]="true"
           [(ngModel)]="chamado.nomeTecnico"
           name="nomeTecnico"
-          [formControl]="tecnico"
-        >
+          [formControl]="tecnico">
           <mat-option
             *ngFor="let tec of tecnicos"
             value="{{ tec.idTecnico }}"
@@ -33,8 +31,7 @@
           [disabled]="true"
           [(ngModel)]="chamado.nomeCliente"
           name="nomeCliente"
-          [formControl]="cliente"
-        >
+          [formControl]="cliente">
           <mat-option
             *ngFor="let cli of clientes"
             value="{{ cli.idCliente }}"
@@ -50,8 +47,7 @@
         <mat-select
           [(ngModel)]="chamado.status"
           name="status"
-          [formControl]="status"
-        >
+          [formControl]="status">
           <mat-option value="0">ABERTO</mat-option>
           <mat-option value="1">ANDAMENTO</mat-option>
           <mat-option value="2">ENCERRADO</mat-option>
@@ -63,8 +59,7 @@
         <mat-select
           [(ngModel)]="chamado.prioridade"
           name="prioridade"
-          [formControl]="prioridade"
-        >
+          [formControl]="prioridade">
           <mat-option value="0">BAIXA</mat-option>
           <mat-option value="1">MEDIA</mat-option>
           <mat-option value="2">ALTA</mat-option>
@@ -79,8 +74,7 @@
         name="valor"
         [formControl]="valor"
         matInput
-        placeholder="200"
-      />
+        placeholder="200" />
     </mat-form-field>
 
     <mat-form-field class="full-width" appearance="outline">
@@ -90,8 +84,7 @@
         name="titulo"
         [formControl]="titulo"
         matInput
-        placeholder="Ex. Trocar bateria de notebook"
-      />
+        placeholder="Ex. Trocar bateria de notebook" />
     </mat-form-field>
   </form>
 
@@ -104,8 +97,7 @@
         [formControl]="observacoes"
         class="observacoes"
         matInput
-        placeholder="Ex. trocar bateria de notebook queimada..."
-      ></textarea>
+        placeholder="Ex. trocar bateria de notebook queimada..."></textarea>
     </mat-form-field>
   </form>
 
@@ -114,15 +106,13 @@
     [disabled]="!validaCampos()"
     class="full-width mat-elevation-z8"
     mat-stroked-button
-    color="warn"
-  >
+    color="warn">
     Atualizar
   </button>
   <button
     routerLink="../../"
     class="full-width mat-elevation-z8"
-    mat-stroked-button
-  >
+    mat-stroked-button>
     Voltar
   </button>
 </div>

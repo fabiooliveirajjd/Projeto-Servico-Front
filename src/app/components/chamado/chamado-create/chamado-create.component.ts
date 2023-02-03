@@ -1,19 +1,19 @@
-import { Component, OnInit } from "@angular/core";
-import { FormControl, Validators } from "@angular/forms";
-import { Router } from "@angular/router";
-import { ChamadoService } from "src/app/services/chamado.service";
+import {Component, OnInit} from "@angular/core";
+import {FormControl, Validators} from "@angular/forms";
+import {Router} from "@angular/router";
+import {ChamadoService} from "src/app/services/chamado.service";
 
-import { Chamado } from "./../../../models/chamado";
-import { Cliente } from "./../../../models/cliente";
-import { Tecnico } from "./../../../models/tecnico";
-import { ClienteService } from "./../../../services/cliente.service";
-import { TecnicoService } from "./../../../services/tecnico.service";
-import { ToastrService } from "ngx-toastr";
+import {Chamado} from "./../../../models/chamado";
+import {Cliente} from "./../../../models/cliente";
+import {Tecnico} from "./../../../models/tecnico";
+import {ClienteService} from "./../../../services/cliente.service";
+import {TecnicoService} from "./../../../services/tecnico.service";
+import {ToastrService} from "ngx-toastr";
 
 @Component({
   selector: "app-chamado-create",
   templateUrl: "./chamado-create.component.html",
-  styleUrls: ["./chamado-create.component.css"],
+  styleUrls: ["./chamado-create.component.css"]
 })
 export class ChamadoCreateComponent implements OnInit {
   chamado: Chamado = {
@@ -25,7 +25,7 @@ export class ChamadoCreateComponent implements OnInit {
     idCliente: "",
     valor: "",
     nomeCliente: "",
-    nomeTecnico: "",
+    nomeTecnico: ""
   };
 
   clientes: Cliente[] = [];

@@ -1,22 +1,21 @@
-import { HttpClient } from '@angular/common/http';
-import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import {HttpClient} from "@angular/common/http";
+import {Injectable} from "@angular/core";
+import {Observable} from "rxjs";
 
-import { API_CONFIG } from '../config/api.config';
-import { Chamado } from '../models/chamado';
+import {API_CONFIG} from "../config/api.config";
+import {Chamado} from "../models/chamado";
 
 @Injectable({
-  providedIn: 'root'
+  providedIn: "root"
 })
 export class ChamadoService {
+  constructor(private http: HttpClient) {}
 
-  constructor(private http: HttpClient) { }
-
-  
-  findById(idChamado: any):Observable<Chamado> {
-    return this.http.get<Chamado>(`${API_CONFIG.baseUrl}/chamados/${idChamado}`);
+  findById(idChamado: any): Observable<Chamado> {
+    return this.http.get<Chamado>(
+      `${API_CONFIG.baseUrl}/chamados/${idChamado}`
+    );
   }
-
 
   findAll(): Observable<Chamado[]> {
     return this.http.get<Chamado[]>(`${API_CONFIG.baseUrl}/chamados`);
@@ -24,15 +23,18 @@ export class ChamadoService {
 
   create(chamado: Chamado): Observable<Chamado> {
     return this.http.post<Chamado>(`${API_CONFIG.baseUrl}/chamados`, chamado);
-   }
+  }
 
-   update(chamado: Chamado): Observable<Chamado> {
-    return this.http.put<Chamado>(`${API_CONFIG.baseUrl}/chamados/${chamado.idChamado}`, chamado);
-   }
+  update(chamado: Chamado): Observable<Chamado> {
+    return this.http.put<Chamado>(
+      `${API_CONFIG.baseUrl}/chamados/${chamado.idChamado}`,
+      chamado
+    );
+  }
 
-   delete(idChamado: any):Observable<Chamado> {
-    return this.http.delete<Chamado>(`${API_CONFIG.baseUrl}/chamados/${idChamado}`);
+  delete(idChamado: any): Observable<Chamado> {
+    return this.http.delete<Chamado>(
+      `${API_CONFIG.baseUrl}/chamados/${idChamado}`
+    );
+  }
 }
-
-}
-     
