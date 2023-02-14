@@ -5,8 +5,7 @@
       class="fullWildth1"
       mat-card-image
       src="assets/imagem/img2.svg"
-      alt="Cadastrar cliente"
-    />
+      alt="Cadastrar cliente" />
 
     <div class="tecnico">
       <mat-form-field class="full-width" appearance="outline">
@@ -15,8 +14,7 @@
           [(ngModel)]="faturamento.idTecnico"
           name="idTecnico"
           [formControl]="idTecnico"
-          required
-        >
+          required>
           <mat-option
             *ngFor="let tec of tecnicos"
             value="{{ tec.idTecnico }}"
@@ -33,8 +31,7 @@
           [(ngModel)]="faturamento.idCliente"
           name="idCliente"
           [formControl]="idCliente"
-          required
-        >
+          required>
           <mat-option
             *ngFor="let cli of clientes"
             value="{{ cli.idCliente }}"
@@ -50,12 +47,10 @@
         [(ngModel)]="faturamento.dataInicioFaturamento"
         name="dataInicioFaturamento"
         matInput
-        [matDatepicker]="picker"
-      />
+        [matDatepicker]="picker" />
       <mat-datepicker-toggle
         matIconSuffix
-        [for]="picker"
-      ></mat-datepicker-toggle>
+        [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
 
@@ -65,46 +60,24 @@
         [(ngModel)]="faturamento.dataFimFaturamento"
         name="dataFimFaturamento"
         matInput
-        [matDatepicker]="datepicker"
-      />
+        [matDatepicker]="datepicker" />
       <mat-datepicker-toggle
         matIconSuffix
-        [for]="datepicker"
-      ></mat-datepicker-toggle>
+        [for]="datepicker"></mat-datepicker-toggle>
       <mat-datepicker #datepicker> </mat-datepicker>
     </mat-form-field>
 
-    <mat-form-field class="full-width" appearance="outline">
-      <mat-label>Valor</mat-label>
-      <input
-        [(ngModel)]="faturamento.valorTotal"
-        name="valorTotal"
-        matInput
-        placeholder="200"
-      />
-    </mat-form-field>
-
     <button
       (click)="create()"
       class="full-width mat-elevation-z8"
       mat-stroked-button
-      color="warn"
-    >
-      Calcular Faturamento
-    </button>
-    <button
-      (click)="create()"
-      class="full-width mat-elevation-z8"
-      mat-stroked-button
-      color="warn"
-    >
-      Cadastrar
+      color="warn">
+      Caucular Faturamento
     </button>
     <button
       routerLink="../"
       class="full-width mat-elevation-z8"
-      mat-stroked-button
-    >
+      mat-stroked-button>
       Voltar
     </button>
   </form>
